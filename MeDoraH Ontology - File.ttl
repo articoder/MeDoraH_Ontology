@@ -1,0 +1,391 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix medorah: <http://www.medorah.org/ontology#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology
+ ] .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#duration
+xsd:duration rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#time
+xsd:time rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.medorah.org/ontology#audioFileReference
+medorah:audioFileReference rdf:type owl:ObjectProperty ;
+                           rdfs:domain medorah:SpeechSegment ;
+                           rdfs:range medorah:AudioFile .
+
+
+###  http://www.medorah.org/ontology#hasAudioFile
+medorah:hasAudioFile rdf:type owl:ObjectProperty ;
+                     rdfs:domain medorah:Interview ;
+                     rdfs:range medorah:AudioFile .
+
+
+###  http://www.medorah.org/ontology#hasInterviewee
+medorah:hasInterviewee rdf:type owl:ObjectProperty ;
+                       rdfs:domain medorah:Interview ;
+                       rdfs:range medorah:Interviewee .
+
+
+###  http://www.medorah.org/ontology#hasInterviewer
+medorah:hasInterviewer rdf:type owl:ObjectProperty ;
+                       rdfs:domain medorah:Interview ;
+                       rdfs:range medorah:Interviewer .
+
+
+###  http://www.medorah.org/ontology#hasSpeechSegment
+medorah:hasSpeechSegment rdf:type owl:ObjectProperty ;
+                         rdfs:domain medorah:Interview ;
+                         rdfs:range medorah:SpeechSegment .
+
+
+###  http://www.medorah.org/ontology#hasTranscriptFile
+medorah:hasTranscriptFile rdf:type owl:ObjectProperty ;
+                          rdfs:domain medorah:Interview ;
+                          rdfs:range medorah:TranscriptFile .
+
+
+###  http://www.medorah.org/ontology#inCollection
+medorah:inCollection rdf:type owl:ObjectProperty ;
+                     rdfs:domain medorah:Interview ;
+                     rdfs:range medorah:Collection .
+
+
+###  http://www.medorah.org/ontology#partOfProject
+medorah:partOfProject rdf:type owl:ObjectProperty ;
+                      rdfs:domain medorah:Interview ;
+                      rdfs:range medorah:Project .
+
+
+###  http://www.medorah.org/ontology#speaker
+medorah:speaker rdf:type owl:ObjectProperty ;
+                rdfs:domain medorah:SpeechSegment ;
+                rdfs:range foaf:Person .
+
+
+###  http://www.medorah.org/ontology#wasGeneratedBy
+medorah:wasGeneratedBy rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf prov:wasGeneratedBy ;
+                       rdfs:domain medorah:Interview ;
+                       rdfs:range medorah:Project .
+
+
+###  http://www.w3.org/ns/prov#wasGeneratedBy
+prov:wasGeneratedBy rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.medorah.org/ontology#accessConditions
+medorah:accessConditions rdf:type owl:DatatypeProperty ;
+                         rdfs:range xsd:string ;
+                         rdfs:comment "Specifies the conditions under which the resource can be accessed."@en ;
+                         rdfs:label "Access Conditions"@en .
+
+
+###  http://www.medorah.org/ontology#accessRights
+medorah:accessRights rdf:type owl:DatatypeProperty ;
+                     rdfs:range xsd:string .
+
+
+###  http://www.medorah.org/ontology#affiliation
+medorah:affiliation rdf:type owl:DatatypeProperty ;
+                    rdfs:range xsd:string .
+
+
+###  http://www.medorah.org/ontology#biography
+medorah:biography rdf:type owl:DatatypeProperty ;
+                  rdfs:range xsd:string .
+
+
+###  http://www.medorah.org/ontology#bitRate
+medorah:bitRate rdf:type owl:DatatypeProperty ;
+                rdfs:domain medorah:AudioFile ;
+                rdfs:range xsd:integer .
+
+
+###  http://www.medorah.org/ontology#checksum
+medorah:checksum rdf:type owl:DatatypeProperty ;
+                 rdfs:domain medorah:AudioFile ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.medorah.org/ontology#creator
+medorah:creator rdf:type owl:DatatypeProperty ;
+                rdfs:domain medorah:Collection ;
+                rdfs:range xsd:string .
+
+
+###  http://www.medorah.org/ontology#date
+medorah:date rdf:type owl:DatatypeProperty ;
+             rdfs:range xsd:date .
+
+
+###  http://www.medorah.org/ontology#dateRange
+medorah:dateRange rdf:type owl:DatatypeProperty ;
+                  rdfs:domain medorah:Collection ;
+                  rdfs:range xsd:string .
+
+
+###  http://www.medorah.org/ontology#demographics
+medorah:demographics rdf:type owl:DatatypeProperty ;
+                     rdfs:domain medorah:Interviewee ;
+                     rdfs:range xsd:string .
+
+
+###  http://www.medorah.org/ontology#description
+medorah:description rdf:type owl:DatatypeProperty ;
+                    rdfs:range xsd:string .
+
+
+###  http://www.medorah.org/ontology#duration
+medorah:duration rdf:type owl:DatatypeProperty ;
+                 rdfs:range xsd:duration .
+
+
+###  http://www.medorah.org/ontology#endDate
+medorah:endDate rdf:type owl:DatatypeProperty ;
+                rdfs:domain medorah:Project ;
+                rdfs:range xsd:date .
+
+
+###  http://www.medorah.org/ontology#endTime
+medorah:endTime rdf:type owl:DatatypeProperty ;
+                rdfs:domain medorah:SpeechSegment ;
+                rdfs:range xsd:time .
+
+
+###  http://www.medorah.org/ontology#equipment
+medorah:equipment rdf:type owl:DatatypeProperty ;
+                  rdfs:domain medorah:AudioFile ;
+                  rdfs:range xsd:string .
+
+
+###  http://www.medorah.org/ontology#extent
+medorah:extent rdf:type owl:DatatypeProperty ;
+               rdfs:domain medorah:Collection ;
+               rdfs:range xsd:string .
+
+
+###  http://www.medorah.org/ontology#fileFormat
+medorah:fileFormat rdf:type owl:DatatypeProperty ;
+                   rdfs:domain medorah:AudioFile ;
+                   rdfs:range xsd:string .
+
+
+###  http://www.medorah.org/ontology#fileName
+medorah:fileName rdf:type owl:DatatypeProperty ;
+                 rdfs:domain medorah:AudioFile ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.medorah.org/ontology#fileSize
+medorah:fileSize rdf:type owl:DatatypeProperty ;
+                 rdfs:domain medorah:AudioFile ;
+                 rdfs:range xsd:long .
+
+
+###  http://www.medorah.org/ontology#funding
+medorah:funding rdf:type owl:DatatypeProperty ;
+                rdfs:domain medorah:Project ;
+                rdfs:range xsd:string .
+
+
+###  http://www.medorah.org/ontology#hasPID
+medorah:hasPID rdf:type owl:DatatypeProperty ;
+               rdfs:range xsd:anyURI ;
+               rdfs:comment "Associates a persistent identifier with a resource."@en ;
+               rdfs:label "has Persistent Identifier"@en .
+
+
+###  http://www.medorah.org/ontology#identifier
+medorah:identifier rdf:type owl:DatatypeProperty ;
+                   rdfs:range xsd:string .
+
+
+###  http://www.medorah.org/ontology#keywords
+medorah:keywords rdf:type owl:DatatypeProperty ;
+                 rdfs:domain medorah:SpeechSegment ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.medorah.org/ontology#language
+medorah:language rdf:type owl:DatatypeProperty ;
+                 rdfs:range xsd:language .
+
+
+###  http://www.medorah.org/ontology#location
+medorah:location rdf:type owl:DatatypeProperty ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.medorah.org/ontology#researchers
+medorah:researchers rdf:type owl:DatatypeProperty ;
+                    rdfs:domain medorah:Project ;
+                    rdfs:range xsd:string .
+
+
+###  http://www.medorah.org/ontology#role
+medorah:role rdf:type owl:DatatypeProperty ;
+             rdfs:domain medorah:Interviewer ;
+             rdfs:range xsd:string .
+
+
+###  http://www.medorah.org/ontology#samplingRate
+medorah:samplingRate rdf:type owl:DatatypeProperty ;
+                     rdfs:domain medorah:AudioFile ;
+                     rdfs:range xsd:integer .
+
+
+###  http://www.medorah.org/ontology#segmentIndex
+medorah:segmentIndex rdf:type owl:DatatypeProperty ;
+                     rdfs:domain medorah:SpeechSegment ;
+                     rdfs:range xsd:integer .
+
+
+###  http://www.medorah.org/ontology#speechCharacteristics
+medorah:speechCharacteristics rdf:type owl:DatatypeProperty ;
+                              rdfs:domain medorah:SpeechSegment ;
+                              rdfs:range xsd:string .
+
+
+###  http://www.medorah.org/ontology#speechToTextTool
+medorah:speechToTextTool rdf:type owl:DatatypeProperty ;
+                         rdfs:domain medorah:TranscriptFile ;
+                         rdfs:range xsd:string .
+
+
+###  http://www.medorah.org/ontology#startDate
+medorah:startDate rdf:type owl:DatatypeProperty ;
+                  rdfs:domain medorah:Project ;
+                  rdfs:range xsd:date .
+
+
+###  http://www.medorah.org/ontology#startTime
+medorah:startTime rdf:type owl:DatatypeProperty ;
+                  rdfs:domain medorah:SpeechSegment ;
+                  rdfs:range xsd:time .
+
+
+###  http://www.medorah.org/ontology#subject
+medorah:subject rdf:type owl:DatatypeProperty ;
+                rdfs:range xsd:string .
+
+
+###  http://www.medorah.org/ontology#synopsis
+medorah:synopsis rdf:type owl:DatatypeProperty ;
+                 rdfs:domain medorah:SpeechSegment ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.medorah.org/ontology#title
+medorah:title rdf:type owl:DatatypeProperty ;
+              rdfs:range xsd:string .
+
+
+###  http://www.medorah.org/ontology#transcriptText
+medorah:transcriptText rdf:type owl:DatatypeProperty ;
+                       rdfs:domain medorah:SpeechSegment ;
+                       rdfs:range xsd:string .
+
+
+###  http://www.medorah.org/ontology#wordCount
+medorah:wordCount rdf:type owl:DatatypeProperty ;
+                  rdfs:domain medorah:TranscriptFile ;
+                  rdfs:range xsd:integer .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/dc/terms/BibliographicResource
+dcterms:BibliographicResource rdf:type owl:Class .
+
+
+###  http://www.medorah.org/ontology#AudioFile
+medorah:AudioFile rdf:type owl:Class ;
+                  rdfs:comment "Represents the original audio recording of an interview, including technical metadata and file integrity information."@en ;
+                  rdfs:label "Audio File"@en .
+
+
+###  http://www.medorah.org/ontology#Collection
+medorah:Collection rdf:type owl:Class ;
+                   rdfs:comment "Represents a collection of interviews or related materials, including metadata about the collection's scope, creator, and access rights."@en ;
+                   rdfs:label "Collection"@en .
+
+
+###  http://www.medorah.org/ontology#Interview
+medorah:Interview rdf:type owl:Class ;
+                  rdfs:subClassOf dcterms:BibliographicResource ,
+                                  prov:Entity ;
+                  rdfs:comment "Represents an oral history interview session, including metadata about the interview, participants, and associated files."@en ;
+                  rdfs:label "Interview"@en .
+
+
+###  http://www.medorah.org/ontology#Interviewee
+medorah:Interviewee rdf:type owl:Class ;
+                    rdfs:subClassOf foaf:Person ;
+                    rdfs:comment "Represents a person being interviewed in an oral history session, including their biographical information and demographics."@en ;
+                    rdfs:label "Interviewee"@en .
+
+
+###  http://www.medorah.org/ontology#Interviewer
+medorah:Interviewer rdf:type owl:Class ;
+                    rdfs:subClassOf foaf:Person ;
+                    rdfs:comment "Represents a person conducting an oral history interview, including their professional details and role in the interview process."@en ;
+                    rdfs:label "Interviewer"@en .
+
+
+###  http://www.medorah.org/ontology#Project
+medorah:Project rdf:type owl:Class ;
+                rdfs:comment "Represents a research project under which interviews are conducted, including project details, funding information, and associated researchers."@en ;
+                rdfs:label "Project"@en .
+
+
+###  http://www.medorah.org/ontology#SpeechSegment
+medorah:SpeechSegment rdf:type owl:Class ;
+                      rdfs:comment "Represents a specific segment of speech within an interview, including timing information, speaker identification, and content analysis."@en ;
+                      rdfs:label "Speech Segment"@en .
+
+
+###  http://www.medorah.org/ontology#TranscriptFile
+medorah:TranscriptFile rdf:type owl:Class ;
+                       rdfs:comment "Represents the transcription of an interview, including metadata about the transcription process and file characteristics."@en ;
+                       rdfs:label "Transcript File"@en .
+
+
+###  http://www.w3.org/ns/prov#Entity
+prov:Entity rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+foaf:Person rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

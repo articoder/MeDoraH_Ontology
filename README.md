@@ -1,17 +1,16 @@
-# MeDoraH_Ontology
 # MeDoraH Ontology and Schema Repository
-
-## Introduction
 Welcome to the MeDoraH (Mixed-methods Digital Oral History) Ontology and Schema Repository. This repository houses the evolving ontology and schema definitions for the MeDoraH project, which aims to integrate semantic web technologies with historical-interpretative analysis in oral history research.
 
 Our ontology provides a comprehensive framework for representing oral history interviews, their metadata, and associated analytical data. It is designed to support advanced content analysis, facilitate interdisciplinary research in digital humanities, and adhere to FAIR (Findable, Accessible, Interoperable, Reusable) data principles.
-## Objectives
+## Goals
 **File Management**: Develop file schemas that creates a digital library/repository with a goal of information dissemination this include effectively capture technical metadata, provenance information, and 
-relationships between different file types (e.g., audio recordings, transcripts,).
+relationships between different file types (e.g., audio recordings, transcripts).
 
+**Content Modelling**: Create detailed content models that accurately represent the structure, semantics, and relationships within oral history narratives, enabling sophisticated network analysis and interpretation.
 
+**FAIR Compliance**: Implement features in the schemas that support the FAIR data principles, enhancing the findability, accessibility, interoperability, and reusability of oral history data.
 
-
+**Semantic Enrichment**: Enable the representation of complex relationships between different elements of oral history data, supporting advanced querying and knowledge discovery.
 
 
 ## Repository Structure

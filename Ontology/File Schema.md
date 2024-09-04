@@ -1,5 +1,3 @@
-# File Schema
-
 ## Prefix and base URI
 
 medorah: http://www.medorah.org/ontology#

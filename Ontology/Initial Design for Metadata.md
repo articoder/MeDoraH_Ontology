@@ -1,9 +1,8 @@
 #medorah/ongoing
 
 Here is a draft of necessary metadata that we may need in our project:
-**Interview*** Integrate the indexing metadata from OHMS
 
-⠀**Interviewer**
+⠀**Interview**
 * Identifier (unique ID for each interview)
 * Title
 * Date
@@ -15,6 +14,13 @@ Here is a draft of necessary metadata that we may need in our project:
 * Transcript (full-text, time-stamped), where we can Integrate the indexing metadata from OHMS
 * Annotations (time-stamped, keywords, notes)
 * Access Rights (restrictions, permissions)
+* Identifier (unique ID for each interviewer)
+* Name
+* Affiliation
+* Biography
+* Role (interviewer, facilitator, etc.)
+
+**Interviewer**
 * Identifier (unique ID for each interviewer)
 * Name
 * Affiliation

@@ -1,0 +1,367 @@
+ID,Name,Type,isFemale,Profession,Entity_Type,Entity_Country
+per_001,Julianne Nyhan,Person,1.0,99,99,99
+per_002,Judy Malloy,Person,1.0,99,99,99
+per_003,Ralph H. Parker,Person,0.0,99,99,99
+per_004,Richard Dougherty,Person,0.0,99,99,99
+per_005,Henriette D. Avram,Person,1.0,99,99,99
+per_006,Ted Nelson,Person,0.0,99,99,99
+per_007,John Cage,Person,0.0,99,99,99
+per_008,Sonya  Rapoport,Person,1.0,99,99,99
+per_009,Mark Bernstein,Person,0.0,99,99,99
+per_010,Dan Anderson,Person,0.0,99,99,99
+per_011,George Perec,Person,0.0,99,99,99
+per_012,Stuart Moulthrop,Person,0.0,8,99,99
+per_013,Nancy Kaplan,Person,1.0,99,99,99
+per_014,Ernst Zinn,Person,0.0,8,99,99
+per_015,Jose Antonio Villarreal,Person,0.0,9,99,99
+per_016,Jo Sanford,Person,1.0,10,99,99
+per_017,Carl Loefler,Person,0.0,99,99,99
+per_018,Fred Truck,Person,0.0,10,99,99
+per_019,Anna Couey,Person,1.0,99,99,99
+per_020,Jeanelle Hurst,Person,1.0,99,99,99
+per_021,Robert Edgar,Person,0.0,99,99,99
+per_022,Howard Besser,Person,0.0,99,99,99
+per_023,Philip Larkin,Person,0.0,99,99,99
+per_024,Robert Coover ,Person,0.0,99,99,99
+per_025,Willard McCarty,Person,0.0,8,99,99
+per_026,Harold Short,Person,0.0,8,99,99
+per_027,John Burrows,Person,0.0,8,99,99
+per_028,Hugh Craig,Person,0.0,8,99,99
+per_029,John Lambert,Person,0.0,99,99,99
+per_030,John Dawson ,Person,0.0,14,99,99
+per_031,Susan Hockey,Person,1.0,99,99,99
+per_032,Annette Dobson,Person,1.0,8,99,99
+per_033,Nick McLaren,Person,0.0,99,99,99
+per_034,Wolfgang Clemen,Person,0.0,99,99,99
+per_035,Stephen Greenblatt,Person,0.0,99,99,99
+per_036,George Hunter ,Person,0.0,99,99,99
+per_037,Geoffrey Rockwell,Person,0.0,8,99,99
+per_038,Robert Weimann,Person,0.0,99,99,99
+per_039,Paul Fortier,Person,0.0,8,99,99
+per_040,Paul Butler,Person,0.0,99,99,99
+per_041,Alexis Antonia,Person,1.0,15,99,99
+per_042,Anne  Barton,Person,1.0,16,99,99
+per_043,Ian Hacking,Person,0.0,99,99,99
+per_044,Harold Love,Person,0.0,99,99,99
+per_045,Wilhelm Ott,Person,0.0,8,99,99
+per_046,Bonifatius Fischer,Person,0.0,99,99,99
+per_047, H�bner,Person,0.0,17,99,99
+per_048,Kurt Aland,Person,0.0,8,99,99
+per_049,John Bradley,Person,0.0,18,99,99
+per_050,Robert Weber,Person,0.0,99,99,99
+per_051,Roberto Busa,Person,0.0,99,99,99
+per_052,Louis Delatte,Person,0.0,8,99,99
+per_053,Joseph Raben,Person,0.0,8,99,99
+per_054,Stephen Waite,Person,0.0,99,99,99
+per_055,Antonio  Zampoli,Person,0.0,99,99,99
+per_056,Eric Auerbach,Person,0.0,99,99,99
+per_057,David Packard,Person,0.0,99,99,99
+per_058,Roy Wisbey,Person,0.0,8,99,99
+per_059, Lenders,Person,0.0,8,99,99
+per_060,Paul Sappler,Person,0.0,99,99,99
+per_061, Niemeyer,Person,0.0,99,99,99
+per_062,Wolfgang Reiner,Person,0.0,99,99,99
+per_063,Gottfried Reeg,Person,0.0,99,99,99
+per_064,Ian Marriot ,Person,0.0,99,99,99
+per_065,John Unsworth,Person,0.0,99,99,99
+per_066, Schepers,Person,,99,99,99
+per_067,David Seaman,Person,0.0,99,99,99
+per_068,Michael Sperberg-McQueen,Person,0.0,99,99,99
+per_069,Jean-Louis Lebrave,Person,0.0,99,99,99
+per_070,Johann Cook,Person,0.0,99,99,99
+per_071,Michael Krupp,Person,0.0,99,99,99
+per_072,Eduard Norden,Person,0.0,99,99,99
+per_073,Ian Lancashire,Person,0.0,99,99,99
+per_074,Eilli Mylonas,Person,,99,99,99
+per_075,Nikki Yokokura,Person,,99,99,99
+per_076,Northrop Frye,Person,,99,99,99
+per_077,George Landow,Person,0.0,99,99,99
+per_078,Sam Cioran,Person,0.0,99,99,99
+per_079,Hans Rutiman,Person,0.0,19,99,99
+per_080,Tito Orlandi,Person,0.0,8,99,99
+per_081,Silvio Ceccato,Person,0.0,8,99,99
+per_082,Ignazio Cazzaniga,Person,0.0,8,99,99
+per_083,Luigi Cerofolini,Person,0.0,99,99,99
+per_084,Mirella Schaerf,Person,1.0,99,99,99
+per_085,William Weaver,Person,0.0,99,99,99
+per_086,Norbert Wiener,Person,0.0,99,99,99
+per_087,Jean-Claude Gardin,Person,0.0,99,99,99
+per_088,Mario Alinei,Person,0.0,99,99,99
+per_089,Silvio D'Arco Avalle,Person,0.0,99,99,99
+per_090,Peter Robinson,Person,0.0,99,99,99
+per_091,Manfred Thaller,Person,0.0,99,99,99
+per_092,Geoffrey Sampson,Person,0.0,99,99,99
+per_093,Andrew Morton,Person,0.0,99,99,99
+per_094,Alan Jones,Person,0.0,99,99,99
+per_095,Bob Churchhouse,Person,0.0,20,99,99
+per_096,Joan Smith,Person,1.0,99,99,99
+per_097,Don Walker,Person,0.0,21,99,99
+per_098,Nancy Ide,Person,1.0,99,99,99
+per_099,David Barnard,Person,0.0,8,99,99
+per_100,Anthony Kenny,Person,0.0,99,99,99
+per_101,Kenneth Dover,Person,0.0,99,99,99
+per_102,Mary Dee Harris,Person,1.0,8,99,99
+per_103,Nell Dale,Person,1.0,99,99,99
+per_104,Donald Ross,Person,0.0,99,99,99
+per_105,Jim Joyce,Person,0.0,99,99,99
+per_106,Jeffrey Huntsman,Person,0.0,99,99,99
+per_107,Patricia K. Galloway,Person,1.0,99,99,99
+per_108,Warner Barnes,Person,0.0,8,99,99
+per_109,William B. Todd,Person,0.0,8,99,99
+per_110,John Nitti,Person,0.0,8,99,99
+per_111,Lloyd Kasten ,Person,0.0,8,99,99
+per_112,Angus Cameron,Person,0.0,8,99,99
+per_113,John O'Neill,Person,0.0,99,99,99
+per_114,Theodore S. Beardsley,Person,0.0,13,99,99
+per_115,Helen Ag�era,Person,1.0,99,99,99
+per_116,Frederic Cassidy,Person,0.0,8,99,99
+per_117,Ted Brunner,Person,0.0,99,99,99
+per_118,Greg Crane,Person,0.0,99,99,99
+per_119,Peter Shillingsburg,Person,0.0,99,99,99
+per_120,David Chesnutt,Person,0.0,99,99,99
+per_121,Lou  Burnard,Person,0.0,99,99,99
+per_122,Winfred Bader,Person,0.0,99,99,99
+per_123,Tim Bray ,Person,0.0,99,99,99
+per_124,Jon Bosak,Person,0.0,22,99,99
+per_125,John James,Person,0.0,23,99,99
+per_126,James Joyce,Person,0.0,99,99,99
+per_127,David Megginson,Person,0.0,99,99,99
+per_128,Rudy Spraycar,Person,0.0,99,99,99
+inst001,National Union Catalog,Institution,99.0,99,1,1
+inst002,Library of Congress,Institution,99.0,99,1,1
+inst003,Ball Brothers Research Corporation (BBRC) ,Institution,99.0,99,2,1
+inst004,Goddard Space Flight Center,Institution,99.0,99,2,1
+inst005,J. Walter Thomson Company,Institution,99.0,99,2,1
+inst006,Special Library System,Institution,99.0,99,1,2
+inst007,San Jose State University,Institution,99.0,99,3,1
+inst008,"Computers in Art and Design, Research and Education Institute (CADRE)",Institution,99.0,99,3,1
+inst009,Museum Computer Network,Institution,99.0,99,4,1
+inst010,NCGA Conference,Institution,99.0,99,99,1
+inst011,Electromagnetic Research Corp,Institution,99.0,99,2,1
+inst012,Oulipo,Institution,99.0,99,99,3
+inst013,"""The Art of Asking your Boss for a Raise"" by George Perec",Institution,99.0,99,6,99
+inst014,Cambridge,Institution,99.0,99,3,4
+inst015,Oxford University Computing Services,Institution,99.0,99,3,4
+inst016,Cambridge Computing Laboratory,Institution,99.0,99,3,4
+inst017,Erich Auerbach's Mimesis,Institution,99.0,99,6,99
+inst018,Arthur Brower's Fields of Light,Institution,99.0,99,6,99
+inst019,New Historicism,Institution,99.0,99,99,99
+inst020,"Journal ""Literary and Linguistics Computing""",Institution,99.0,99,6,4
+inst021,"Journal ""Computing in the Humanities""",Institution,99.0,99,6,99
+inst022,MLA (Modern Language Association),Institution,99.0,99,4,1
+inst023,AULLA (Australasian Universities Language and Literature Association),Institution,99.0,99,4,5
+inst024,Computer Center at the University of Tübingen ,Institution,99.0,99,1,2
+inst025,Classics Department in Tübingen University,Institution,99.0,99,3,2
+inst026,Deutsche Forschungsgemeinschaft (DFG),Institution,99.0,99,4,2
+inst027,University of Tübingen,Institution,99.0,99,3,2
+inst028,University of Münster,Institution,99.0,99,3,2
+inst029,Theologische Quartalschrift,Institution,99.0,99,6,2
+inst030,Institute of Hebrew Studies,Institution,99.0,99,3,2
+inst031,Lix Bildstudio,Institution,99.0,99,2,2
+inst032,Mittelbayerische Zeitung,Institution,99.0,99,2,2
+inst033,Hell Company,Institution,99.0,99,2,2
+inst034,Fromman-Holzboog,Institution,99.0,99,2,2
+inst035,Laboratoire d'Analyse Statistique des Langues Anciennes,Institution,99.0,99,3,9
+inst036,La F�d�ration internationale des associations d'�tudes classiques (FIEC),Institution,99.0,99,99,99
+inst037,Packard Foundation,Institution,99.0,99,4,1
+inst038,ALLC (Association for Literary and Linguistic Computing),Institution,99.0,99,4,4
+inst039,Last conference (before ALLC was founded),Institution,99.0,99,99,11
+inst040,Appendix to the commentary of Eduard Norden to the six book af Aeneid,Institution,99.0,99,6,99
+inst041,pagina GmbH,Institution,99.0,99,2,2
+inst042,TUSTEP (T�binger System von Textverarbeitungs-Programmen),Institution,99.0,99,99,99
+inst043,COCOA,Institution,99.0,99,99,99
+inst044,Oxford Concordance Program (OCP),Institution,99.0,99,99,99
+inst045,(Regensburg) COBAPH,Institution,99.0,99,99,99
+inst046,Kolloquium zur Anwendung der EDV in den Geisteswisschenschaften and der Universit�t Tübingen,Institution,99.0,99,99,2
+inst047,TXSTEP,Institution,99.0,99,99,99
+inst048,University of Newcastle,Institution,99.0,99,3,5
+inst049,Centre for Literary and Linguistic Computing (CLLC),Institution,99.0,99,3,5
+inst050,University of Toronto Centre for Computing in the Humanities,Institution,99.0,99,3,6
+inst051,University of Toronto Computing Services,Institution,99.0,99,3,6
+inst052,Apple,Institution,99.0,99,2,1
+inst053,Princeton University,Institution,99.0,99,3,1
+inst054,"McMasters University Humanities, Media and Computing Labs",Institution,99.0,99,3,6
+inst055,Centre for Computing in the Humanities (CCH),Institution,99.0,99,4,4
+inst056,ACH/ALLL,Institution,99.0,99,99,6
+inst057,Computing in the Humanities Working Papers (CHWP),Institution,99.0,99,6,99
+inst058,Paris conference,Institution,99.0,99,99,99
+inst059,University of Alberta,Institution,99.0,99,3,6
+inst060,University of Toronto,Institution,99.0,99,3,6
+inst061,Haverford College,Institution,99.0,99,3,99
+inst062,Modern Languages Association (MLA),Institution,99.0,99,3,1
+inst063,Modern Languages Association International Bibliography (MLA IB),Institution,99.0,99,3,1
+inst064,Lockheed,Institution,99.0,99,99,1
+inst065,IBM,Institution,99.0,99,2,1
+inst066,Visidex,Institution,99.0,99,99,1
+inst067,University of California,Institution,99.0,99,3,1
+inst068,University of Denver,Institution,99.0,99,3,1
+inst069,Graduate School of Librarianship,Institution,99.0,99,3,1
+inst070,Nixdorf Computer AG,Institution,99.0,99,2,2
+inst071,Centro di calcolo (the computer centre),Institution,99.0,99,3,7
+inst072,University of Rome,Institution,99.0,99,3,7
+inst073,Archeological Constructs: An Aspect of Theoretical Archeology by J. C. Gardin,Institution,99.0,99,6,99
+inst074,Instituto di Linguistica Computazionale  (Institute of Computational Linguistics),Institution,99.0,99,3,7
+inst075,CNR - Consiglio Nazionale delle Ricerche,Institution,99.0,99,1,7
+inst076,Oxford Text Archive,Institution,99.0,99,3,4
+inst077,British National Corpus (BNC),Institution,99.0,99,99,99
+inst078,Oxford Patristic Conference,Institution,99.0,99,99,4
+inst079,Universita degli Studi Roma,Institution,99.0,99,3,7
+inst080,"CISADU, the Center of Service for Automation in the Humanities",Institution,99.0,99,3,7
+inst081,Informatica per le Scienze Umanistiche,Institution,99.0,99,3,7
+inst082,University of Milan,Institution,99.0,99,3,7
+inst083,Atlas Computer Laboratory,Institution,99.0,99,1,4
+inst084,Science Research Council,Institution,99.0,99,1,4
+inst085,COCOA (concordance programm),Institution,99.0,99,99,99
+inst086,Oxford University ,Institution,99.0,99,1,4
+inst087,"""Literary and Linguistic Computing"" Conference",Institution,99.0,99,99,4
+inst088,Civil Service or GCHQ (The UK Government Communications Headquarters),Institution,99.0,99,1,4
+inst089,"""Literary and Linguistic Computing"" second Conference",Institution,99.0,99,99,11
+inst090,Meeting at Vassar College Poughkeepsie,Institution,99.0,99,99,1
+inst091,ACH (The Association for Computers and the Humanities),Institution,99.0,99,4,1
+inst092,Association for Computational Linguistics,Institution,99.0,99,4,99
+inst093,University of Waterloo,Institution,99.0,99,3,6
+inst094,University of Manitoba,Institution,99.0,99,3,6
+inst095,Queens University,Institution,99.0,99,3,6
+inst096,University College London (UCL),Institution,99.0,99,3,4
+inst097,Oxford Universiry Computing Services,Institution,99.0,99,3,4
+inst098,Center for Electronic Texts in the Humanities (CETH),Institution,99.0,99,3,1
+inst099,Rutgers University,Institution,99.0,99,3,1
+inst100,Jet Propulsion Lab (JPL),Institution,99.0,99,2,1
+inst101,University of Texas at Austin (UT Austin),Institution,99.0,99,3,1
+inst102,University in Oklahoma,Institution,99.0,99,3,1
+inst103,Loyola University,Institution,99.0,99,3,1
+inst104,"Department of Mathematics, Computer Science and Statistics ",Institution,99.0,99,3,1
+inst105,SRA,Institution,99.0,99,2,1
+inst106,"""Language Technology""",Institution,99.0,99,2,99
+inst107,Modern Language Association (MLA) Conference,Institution,99.0,99,99,1
+inst108,"""Catalis""",Institution,99.0,99,2,1
+inst109,The University of Wisconsin-Madison,Institution,99.0,99,3,1
+inst110,Hispanic Seminary of Medieval Studies,Institution,99.0,99,2,99
+inst111,Hispanic Society of America,Institution,99.0,99,4,1
+inst112,University of Montreal,Institution,99.0,99,3,6
+inst113,University of California-Berkeley,Institution,99.0,99,3,1
+inst114,Oxford English Dictionary (OED),Institution,99.0,99,6,99
+inst115,University of Salamanca,Institution,99.0,99,3,8
+inst116,The International Congress on Medieval Studies,Institution,99.0,99,99,1
+inst117,National Computar Conference,Institution,99.0,99,99,1
+inst118,United States Patent Office,Institution,99.0,99,1,1
+inst119,NEH (National Endowment for the Humanities),Institution,99.0,99,1,1
+inst120,Thesaurus Linquae Graecae (TLG),Institution,99.0,99,99,99
+inst121,Text Encoding Initiative (TEI),Institution,99.0,99,99,99
+inst122,University of Chicago,Institution,99.0,99,3,1
+inst123,"""Concordances and the Dictionary of Old English"" ",Institution,99.0,99,6,99
+inst124,Stanford University,Institution,99.0,99,3,1
+inst125,Johns Hopkins University,Institution,99.0,99,3,1
+inst126,Princeton University Computing Service,Institution,99.0,99,3,1
+inst127,International Conference on Computers and the Humanities,Institution,99.0,99,99,99
+inst128,PASCAL for the Humanities by Nancy Die,Institution,99.0,99,6,99
+inst129,ICCH Conference ,Institution,99.0,99,99,1
+inst130,"Meeting in Poughkeepsie, at Vassar",Institution,99.0,99,99,1
+inst131,TEI Steering Committee meeting in Pisa,Institution,99.0,99,99,99
+inst132,German Bible Society ,Institution,99.0,99,4,2
+inst133,SGML Conference '96 in Boston,Institution,99.0,99,99,99
+inst134,Black Mesa Technologies Ltd,Institution,99.0,99,2,1
+inst135,ARRAS (Archive Retrieval and Analysis System),Institution,99.0,99,99,99
+inst136,University of North Carolina,Institution,99.0,99,3,1
+inst137,XML (Extensive Markup Language),Institution,99.0,99,99,99
+inst138,World Wide Web Consortium (W3C),Institution,99.0,99,4,1
+inst139,University of Bergen,Institution,99.0,99,3,10
+inst140,TU Darmstadt,Institution,99.0,99,3,2
+inst141,Susan Hockey's Book,Institution,99.0,99,6,99
+eq001,Punch cards,Equipment,99.0,99,7,99
+eq002,IBM computer,Equipment,99.0,99,7,99
+eq003,catalog cards,Equipment,99.0,99,7,99
+eq004,electromechanical books ,Equipment,99.0,99,7,99
+eq005,Apple II,Equipment,99.0,99,7,99
+eq001,Remington word processor,Equipment,99.0,99,7,99
+eq001,IBM 7090,Equipment,99.0,99,7,99
+eq002,IBM 7094,Equipment,99.0,99,7,99
+eq001,IBM 360/20,Equipment,99.0,99,7,99
+eq001,Magnetic Tape,Equipment,99.0,99,7,99
+eq001,IBM 360 ,Equipment,99.0,99,7,99
+eq002,IBM 7000 series,Equipment,99.0,99,7,99
+eq002,UNIVAC computer,Equipment,99.0,99,7,99
+eq003,Philips cassette tapes,Equipment,99.0,99,7,99
+eq004,IBM Magnetic Tape Selectric Typewriter (MTST),Equipment,99.0,99,7,99
+eq005,CRT terminal,Equipment,99.0,99,7,99
+eq001,IBM PCs,Equipment,99.0,99,7,99
+eq002,Mainframe,Equipment,99.0,99,7,99
+met001,Programming ,Method,99.0,99,8,99
+met002,Library System Analysis,Method,99.0,99,8,99
+met001,PCA (Principal Component Analysis),Method,99.0,99,8,99
+met001,FORTRAN,Method,99.0,99,8,99
+met002,Visual Programming,Method,99.0,99,8,99
+met002,Operation,Method,99.0,99,8,99
+met002,Programming,Method,99.0,99,8,99
+met001,Kurzweil OCR device,Method,99.0,99,8,99
+soft001,FORTRAN,Software,99.0,99,9,99
+soft002,Visidex,Software,99.0,99,9,99
+soft003,BASIC,Software,99.0,99,9,99
+soft004,HTML,Software,99.0,99,9,99
+soft005,JavaScript,Software,99.0,99,9,99
+soft006,Unix shell scripts,Software,99.0,99,9,99
+soft001,"LILAC (Literature, Language, Computing)",Software,99.0,99,9,99
+soft001,LEL (Lexicon Electronicum Latinum),Software,99.0,99,9,99
+soft002,TUSTEP,Software,99.0,99,9,99
+soft003,TXSTEP,Software,99.0,99,9,99
+soft004,XML,Software,99.0,99,9,99
+soft001,HyperCard,Software,99.0,99,9,99
+soft001,Omnidata (Database Management System),Software,99.0,99,9,99
+soft002,UNIVAC mainframe,Software,99.0,99,9,99
+soft002,ALGOL,Software,99.0,99,9,99
+soft003,Atlas machine code,Software,99.0,99,9,99
+soft004,SNOBOL,Software,99.0,99,9,99
+soft003,CP/M (Control Program for Microcomputers),Software,99.0,99,9,99
+soft004,TeX typesetting language,Software,99.0,99,9,99
+soft002,SGML,Software,99.0,99,9,99
+disc001,English language,Discipline,99.0,99,10,99
+disc002,Information science,Discipline,99.0,99,10,99
+disc003,Library retrieval systems,Discipline,99.0,99,10,99
+disc004,System analysis,Discipline,99.0,99,10,99
+disc005,Library retrieval system?? ,Discipline,99.0,99,10,99
+disc006,Experimental literature ,Discipline,99.0,99,10,99
+disc007,Viasual art,Discipline,99.0,99,10,99
+disc008,Hypertext Science ,Discipline,99.0,99,10,99
+disc009,Computer Science,Discipline,99.0,99,10,99
+disc010,Classical Philology,Discipline,99.0,99,10,99
+disc011,Art,Discipline,99.0,99,10,99
+disc012,Humanities Computing,Discipline,99.0,99,10,99
+disc013,English language ,Discipline,99.0,99,10,99
+disc014,Computational Stylistics,Discipline,99.0,99,10,99
+disc015,Literary and Linquistic Computer Science,Discipline,99.0,99,10,99
+disc016,Statistics,Discipline,99.0,99,10,99
+disc017,Research in Renaissance area,Discipline,99.0,99,10,99
+disc018,Cultural Poetic,Discipline,99.0,99,10,99
+disc019,Literary History in renaissance English,Discipline,99.0,99,10,99
+disc020,Philosophy,Discipline,99.0,99,10,99
+disc021,French Language,Discipline,99.0,99,10,99
+disc022,Linguistics,Discipline,99.0,99,10,99
+disc023,Physics,Discipline,99.0,99,10,99
+disc024,Theology,Discipline,99.0,99,10,99
+disc025,Mathematics,Discipline,99.0,99,10,99
+disc026,Music,Discipline,99.0,99,10,99
+disc027,German Medieval Languages and Literature,Discipline,99.0,99,10,99
+disc028,German literature,Discipline,99.0,99,10,99
+disc029,History of Ancient Philosophy,Discipline,99.0,99,10,99
+disc030,Artificial Intelligence,Discipline,99.0,99,10,99
+disc031,Cybernetics,Discipline,99.0,99,10,99
+disc032,Philology ,Discipline,99.0,99,10,99
+disc033,Apllied Mathematics,Discipline,99.0,99,10,99
+disc034,Logical Theory of Numbers,Discipline,99.0,99,10,99
+disc035,Archeology,Discipline,99.0,99,10,99
+disc036,early Italian Literary Studies ,Discipline,99.0,99,10,99
+disc037,Text Analysis,Discipline,99.0,99,10,99
+disc038,Arabic language,Discipline,99.0,99,10,99
+disc039,Computer Analysis,Discipline,99.0,99,10,99
+disc040,Classicism,Discipline,99.0,99,10,99
+disc041,Mathematics ,Discipline,99.0,99,10,99
+disc042,English Literature,Discipline,99.0,99,10,99
+disc043,NLP,Discipline,99.0,99,10,99
+disc044,Spanish/Portuguese,Discipline,99.0,99,10,99
+disc045,Spanish literature and language ,Discipline,99.0,99,10,99
+disc046,(early) Digital Humanities,Discipline,99.0,99,10,99
+disc047,Scholarly editions in History ,Discipline,99.0,99,10,99
+disc048,Scholarly editions in literature,Discipline,99.0,99,10,99
+disc049,Theology ,Discipline,99.0,99,10,99
+disc050,Anglo-Saxon Language ,Discipline,99.0,99,10,99
+disc051,Slavic Languages ,Discipline,99.0,99,10,99

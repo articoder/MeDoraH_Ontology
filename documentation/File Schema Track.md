@@ -1,7 +1,9 @@
 Works done: 
-[Summary Review of the Oral History Schemas](../../../ongoing/Summary%20Review%20of%20the%20Oral%20History%20Schemas.md)
+[Summary Review of the Oral History Schemas](../Related%20Resources/Review%20of%20the%20Oral%20History%20Schemas.md)
 [Initial Design for Metadata](Initial%20Design%20for%20Metadata.md)
 [File Schema (Deprecated)](File%20Schema%20(Deprecated).md) (Deprecated)
+
+
 
 
 ## Resource:

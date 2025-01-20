@@ -1,0 +1,65 @@
+ID,Name,Type,isFemale,Profession,Entity_Type,Entity_Country
+per001,Julianne Nyhan,Person,1,99,99,99
+per002,Judy Malloy,Person,1,99,99,99
+per003,Ralph H. Parker,Person,0,99,99,99
+per004,Richard Dougherty,Person,0,99,99,99
+per005,Henriette D. Avram,Person,1,99,99,99
+per006,Ted Nelson,Person,0,99,99,99
+per007,John Cage,Person,0,99,99,99
+per008,Sonya  Rapoport,Person,1,99,99,99
+per009,Mark Bernstein,Person,0,99,99,99
+per010,Dan Anderson,Person,0,99,99,99
+per011,George Perec,Person,0,99,99,99
+per012,Stuart Moulthrop,Person,0,8,99,99
+per013,Nancy Kaplan,Person,1,99,99,99
+per014,Ernst Zinn,Person,0,8,99,99
+per015,Jose Antonio Villarreal,Person,0,9,99,99
+per016,Jo Sanford,Person,1,10,99,99
+per017,Carl Loefler,Person,0,99,99,99
+per018,Fred Truck,Person,0,10,99,99
+per019,Anna Couey,Person,1,99,99,99
+per020,Jeanelle Hurst,Person,1,99,99,99
+per021,Robert Edgar,Person,0,99,99,99
+per022,Howard Besser,Person,0,99,99,99
+per023,Philip Larkin,Person,0,99,99,99
+per024,Robert Coover ,Person,0,99,99,99
+per025,Willard McCarty,Person,0,8,99,99
+inst001,National Union Catalog,Institution,99,99,1,1
+inst002,Library of Congress,Institution,99,99,1,1
+inst003,Ball Brothers Research Corporation (BBRC) ,Institution,99,99,2,1
+inst004,Goddard Space Flight Center,Institution,99,99,2,1
+inst005,J. Walter Thomson Company,Institution,99,99,2,1
+inst006,Special Library System,Institution,99,99,1,2
+inst007,San Jose State University,Institution,99,99,3,1
+inst008,"Computers in Art and Design, Research and Education Institute (CADRE)",Institution,99,99,3,1
+inst009,Museum Computer Network,Institution,99,99,4,1
+inst010,NCGA Conference,Institution,99,99,99,1
+inst011,Electromagnetic Research Corp,Institution,99,99,2,1
+inst012,Oulipo,Institution,99,99,99,3
+inst013,"""The Art of Asking your Boss for a Raise"" by George Perec",Institution,99,99,6,99
+inst068,University of Denver,Institution,99,99,3,1
+eq001,Punch cards,Equipment,99,99,7,99
+eq002,IBM computer,Equipment,99,99,7,99
+eq003,catalog cards,Equipment,99,99,7,99
+eq004,electromechanical books ,Equipment,99,99,7,99
+eq005,Apple II,Equipment,99,99,7,99
+met001,Programming ,Method,99,99,8,99
+met002,Library System Analysis,Method,99,99,8,99
+soft001,FORTRAN,Software,99,99,9,99
+soft002,Visidex,Software,99,99,9,99
+soft003,BASIC,Software,99,99,9,99
+soft004,HTML,Software,99,99,9,99
+soft005,JavaScript,Software,99,99,9,99
+soft006,Unix shell scripts,Software,99,99,9,99
+disc001,English language,Discipline,99,99,10,99
+disc002,Information science,Discipline,99,99,10,99
+disc003,Library retrieval systems,Discipline,99,99,10,99
+disc004,System analysis,Discipline,99,99,10,99
+disc005,Library retrieval system,Discipline,99,99,10,99
+disc006,Experimental literature,Discipline,99,99,10,99
+disc007,Viasual art,Discipline,99,99,10,99
+disc008,Hypertext Science ,Discipline,99,99,10,99
+disc009,Computer Science,Discipline,99,99,10,99
+disc010,Classical Philology,Discipline,99,99,10,99
+disc011,Art,Discipline,99,99,10,99
+disc012,Humanities Computing,Discipline,99,99,10,99

@@ -1,5 +1,6 @@
-#medorah/ongoing
-
+---
+date: 2024-09-25
+---
 Here is a draft of necessary metadata that we may need in our project:
 
 ⠀**Interview**

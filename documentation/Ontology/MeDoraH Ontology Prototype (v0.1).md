@@ -1,7 +1,7 @@
-# MeDoraH Ontology Prototype (v0.1)
+# MeDoraH Ontology Prototype (v0.1-1116)
 
 MeDoraH Ontology for Narratives of Digital Humanities 
-**Version:** 0.1 (Prototype) 
+**Version:** 0.1-1116 (Prototype) 
 **Status:** Research prototype (not yet finalised) 
 
 ---

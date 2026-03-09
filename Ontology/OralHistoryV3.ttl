@@ -1,0 +1,340 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix oh: <http://hiddenhistories.net/oral_history_ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <http://hiddenhistories.net/oral_history_ontology/> .
+
+<http://hiddenhistories.net/oral_history_ontology/> rdf:type owl:Ontology ;
+    dc:title "MeDoraH Oral History Metadata Vocabulary" ;
+    dc:description "A vocabulary for documenting Oral History interviews across four lifecycle stages: Planning, Interview, Processing, and Publication & Access. Developed by the MeDoraH (Memory of Digital Research Activities in the Humanities) project. Based on the Metadata Elements for Oral History 1.1 by the Oral History Association Metadata Task Force (OHAMTF)." ;
+    dcterms:created "2024-07-01"^^xsd:date ;
+    dcterms:modified "2026-03-08"^^xsd:date ;
+    owl:versionInfo "3.0" ;
+    dc:creator "MeDoraH Project, University College London" .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+xsd:date rdf:type rdfs:Datatype .
+
+xsd:duration rdf:type rdfs:Datatype .
+
+xsd:language rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  Oral History Life Cycle (top-level class)
+oh:Oral_History_Life_Cycle rdf:type owl:Class ;
+    rdfs:comment "The lifecycle of an Oral History interview, encompassing planning, conducting, processing, and publication stages." ;
+    rdfs:label "Oral History Life Cycle" .
+
+###  Plan Stage
+oh:PlanStage rdf:type owl:Class ;
+    rdfs:subClassOf oh:Oral_History_Life_Cycle ;
+    rdfs:comment "The planning stage of an oral history interview, covering preparatory activities and materials." ;
+    rdfs:label "Plan Stage" .
+
+###  Interview Stage
+oh:InterviewStage rdf:type owl:Class ;
+    rdfs:subClassOf oh:Oral_History_Life_Cycle ;
+    rdfs:comment "The stage where the oral history interview is conducted." ;
+    rdfs:label "Interview Stage" .
+
+###  Processing Stage
+oh:ProcessingStage rdf:type owl:Class ;
+    rdfs:subClassOf oh:Oral_History_Life_Cycle ;
+    rdfs:comment "The stage where the oral history interview is processed, transcribed, and prepared for dissemination." ;
+    rdfs:label "Processing Stage" .
+
+###  Publication and Access Stage
+oh:PublicationAccessStage rdf:type owl:Class ;
+    rdfs:subClassOf oh:Oral_History_Life_Cycle ;
+    rdfs:comment "The stage where the oral history interview is published and made accessible." ;
+    rdfs:label "Publication and Access Stage" .
+
+###  Person
+oh:Person rdf:type owl:Class ;
+    rdfs:comment "A person involved in the oral history interview." ;
+    rdfs:label "Person" .
+
+###  Interviewer
+oh:Interviewer rdf:type owl:Class ;
+    rdfs:subClassOf oh:Person ;
+    rdfs:comment "A person responsible for conducting the oral history interview." ;
+    rdfs:label "Interviewer" .
+
+###  Interviewee
+oh:Interviewee rdf:type owl:Class ;
+    rdfs:subClassOf oh:Person ;
+    rdfs:comment "A person who is being interviewed and sharing their personal history or experiences in the oral history project." ;
+    rdfs:label "Interviewee" .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  Interviewer (links interview to the person conducting it)
+oh:interviewer rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf dcterms:creator ;
+    rdfs:domain oh:InterviewStage ;
+    rdfs:range oh:Interviewer ;
+    rdfs:comment "The person(s) responsible for conducting the interview in the Oral History recording. The name of the interviewer should be used to indicate the entity, linking to their description. Where possible use name authority file, such as VIAF." ;
+    rdfs:label "Interviewer" .
+
+###  Interviewee (links interview to the person being interviewed)
+oh:interviewee rdf:type owl:ObjectProperty ;
+    rdfs:subPropertyOf dcterms:creator ;
+    rdfs:domain oh:InterviewStage ;
+    rdfs:range oh:Interviewee ;
+    rdfs:comment "The person who is being interviewed and sharing their personal history or experiences in the Oral History project. The name of the interviewee should be used to indicate the entity, linking to their description. Where possible use name authority file, such as VIAF." ;
+    rdfs:label "Interviewee" .
+
+
+#################################################################
+#    Data Properties - Person
+#################################################################
+
+###  Name
+oh:name rdf:type owl:DatatypeProperty ;
+    rdfs:domain oh:Person ;
+    rdfs:range xsd:string ;
+    rdfs:comment "The full name of the person. Use a controlled format for names (e.g., 'LastName, FirstName')." ;
+    rdfs:label "Name" .
+
+###  Affiliation
+oh:affiliation rdf:type owl:DatatypeProperty ;
+    rdfs:domain oh:Person ;
+    rdfs:range xsd:string ;
+    rdfs:comment "The institution or organization the person is associated with at the time of the interview." ;
+    rdfs:label "Affiliation" .
+
+###  Biography
+oh:biography rdf:type owl:DatatypeProperty ;
+    rdfs:domain oh:Person ;
+    rdfs:range xsd:string ;
+    rdfs:comment "A brief professional background of the person, highlighting relevant experience or context for the interview." ;
+    rdfs:label "Biography" .
+
+###  First Language
+oh:firstLanguage rdf:type owl:DatatypeProperty ;
+    rdfs:domain oh:Person ;
+    rdfs:range xsd:language ;
+    rdfs:comment "The primary language of the person, specified using the ISO 639-2 three-letter language code." ;
+    rdfs:label "First Language" .
+
+###  ORCID
+oh:orcid rdf:type owl:DatatypeProperty ;
+    rdfs:domain oh:Person ;
+    rdfs:range xsd:anyURI ;
+    rdfs:comment "The unique 16-digit identifier assigned by ORCID (Open Researcher and Contributor ID) to the person." ;
+    rdfs:label "ORCID" .
+
+###  VIAF ID
+oh:viafID rdf:type owl:DatatypeProperty ;
+    rdfs:domain oh:Person ;
+    rdfs:range xsd:anyURI ;
+    rdfs:comment "The VIAF identifier for the person, if available, to link to standardised name authority records." ;
+    rdfs:label "VIAF ID" .
+
+
+#################################################################
+#    Data Properties - 1. Planning Stage
+#################################################################
+
+###  Purpose
+oh:purpose rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf dcterms:description ;
+    rdfs:domain oh:PlanStage ;
+    rdfs:range xsd:string ;
+    rdfs:comment "The Oral History interview's motivation. This field should describe the rationale, research questions, and objectives behind the creation of the interview." ;
+    rdfs:label "Purpose" .
+
+###  Plan-stage Material
+oh:planStageMaterial rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf dcterms:references ;
+    rdfs:domain oh:PlanStage ;
+    rdfs:range xsd:anyURI ;
+    rdfs:comment "Description of any additional materials given by the interviewee or gathered during the research process, in advance of the interview. Example plan stage materials include preparation research documents, interview guides, interview questions, consent forms, or field notes that support the interview planning process." ;
+    rdfs:label "Plan-stage Material" .
+
+
+#################################################################
+#    Data Properties - 2. Interview Details
+#################################################################
+
+###  Interview Date
+oh:interviewDate rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf dcterms:date ;
+    rdfs:domain oh:InterviewStage ;
+    rdfs:range xsd:date ;
+    rdfs:comment "The date the Oral History interview took place. Date may be expressed at any level of granularity (for instance year or exact date). To express date, use the W3CDTF profile of ISO 8601 encoding scheme." ;
+    rdfs:label "Date" .
+
+###  Location
+oh:location rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf dcterms:coverage ;
+    rdfs:domain oh:InterviewStage ;
+    rdfs:range xsd:string ;
+    rdfs:comment "A location or space where the interview took place. For in-person interviews state geographic location. For online interviews state tool used (e.g. Skype interview). For geographic locations use controlled vocabularies like the Getty Thesaurus of Geographic Names where possible." ;
+    rdfs:label "Location" .
+
+###  Interview Language
+oh:interviewLanguage rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf dcterms:language ;
+    rdfs:domain oh:InterviewStage ;
+    rdfs:range xsd:language ;
+    rdfs:comment "The primary language spoken in the Oral History interview. To express language, use the ISO 639-2 three-letter language code." ;
+    rdfs:label "Language" .
+
+###  Interview Series
+oh:interviewSeries rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf dcterms:relation ;
+    rdfs:domain oh:InterviewStage ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Indicates the series the interview is part of (if any). Include the series name, interview number, total interviews in the series (if known), and a brief description of the series if relevant. Ideally provide a unique identifier of the series." ;
+    rdfs:label "Interview Series" .
+
+###  Recording Method Description
+oh:recordingMethodDescription rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf dcterms:description ;
+    rdfs:domain oh:InterviewStage ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Description of the equipment and technology used to record the Oral History interview. This may include software or hardware components such as Microsoft Teams, Zoom or H4n Pro Audio Recorder. This information could be used for future playback, reproduction, preservation planning, and addressing compatibility issues." ;
+    rdfs:label "Recording Method Description" .
+
+###  Recording Storage Medium
+oh:recordingStorageMedium rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf dcterms:format ;
+    rdfs:domain oh:InterviewStage ;
+    rdfs:range xsd:string ;
+    rdfs:comment "This element refers to the format and the medium on which the recording was first saved immediately after the interview, which may differ from long-term archival storage. This may include physical or virtual storage media, such as Sandisk SD card or cloud storage. For digital recordings, specify the type of digital storage. Preferably conforming to a controlled vocabulary." ;
+    rdfs:label "Recording Storage Medium" .
+
+###  Recording Duration
+oh:recordingDuration rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf dcterms:extent ;
+    rdfs:domain oh:InterviewStage ;
+    rdfs:range xsd:duration ;
+    rdfs:comment "The total runtime of the recorded Oral History interview, measured from the beginning to the end of the recording, expressed in hours, minutes, and seconds. If the interview was conducted over multiple sessions, this should represent the individual session instead of the total duration. ISO 8601 duration format preferred (e.g. PT1H30M24S)." ;
+    rdfs:label "Recording Duration" .
+
+
+#################################################################
+#    Data Properties - 3. Processing Details
+#################################################################
+
+###  Unique Identifier
+oh:uniqueIdentifier rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf dcterms:identifier ;
+    rdfs:domain oh:ProcessingStage ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Unique and persistent identifier for the Oral History interview, such as a DOI. It is recommended to use identifiers such as DOI (Digital Object Identifier) or ARK (Archival Resource Key). This identifier should be assigned in the processing detail stage and used consistently in all references to the interview." ;
+    rdfs:label "Unique Identifier" .
+
+###  Interview Title
+oh:interviewTitle rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf dcterms:title ;
+    rdfs:domain oh:ProcessingStage ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Name given to the interview. Titles can include the name of the interview, interview topic, or the broader sense if applicable." ;
+    rdfs:label "Interview Title" .
+
+###  Summary
+oh:summary rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf dcterms:abstract ;
+    rdfs:domain oh:ProcessingStage ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Narrative description of interview content. Could be formatted as an abstract." ;
+    rdfs:label "Summary" .
+
+###  Keywords
+oh:keywords rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf dcterms:subject ;
+    rdfs:domain oh:ProcessingStage ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Used to store the interview subjects, preferably by linking to or at least using a controlled vocabulary. Subjects should be broad but specific enough to give users insight into the major themes discussed, including historical events or personal narratives. Examples for controlled vocabularies include the Library of Congress Subject Headings." ;
+    rdfs:label "Keywords" .
+
+###  Transcriber
+oh:transcriber rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf dcterms:contributor ;
+    rdfs:domain oh:ProcessingStage ;
+    rdfs:range xsd:string ;
+    rdfs:comment "The name of the entity responsible for transcribing the interview. This may be a person, a company or a software. Where possible use name authority file, such as VIAF." ;
+    rdfs:label "Transcriber" .
+
+###  Translator
+oh:translator rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf dcterms:contributor ;
+    rdfs:domain oh:ProcessingStage ;
+    rdfs:range xsd:string ;
+    rdfs:comment "The name of the entity responsible for translation during interview or afterward during processing. This may be a person, a company or a software. Where possible use name authority file, such as VIAF." ;
+    rdfs:label "Translator" .
+
+###  Derivative Material Description
+oh:derivativeMaterialDescription rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf dcterms:description ;
+    rdfs:domain oh:ProcessingStage ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Materials generated during the processing details stage of an Oral History interview, including both physical and digital derivatives such as translation, transcripts, video clips, tape logs, and indexes like OHMS. It could also be supplemental materials provided by the interviewee or gathered during the interview or research process (e.g., newspaper clippings, scrapbooks, photographs)." ;
+    rdfs:label "Derivative Material Description" .
+
+###  Processing Tools
+oh:processingTools rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf dcterms:relation ;
+    rdfs:domain oh:ProcessingStage ;
+    rdfs:range xsd:anyURI ;
+    rdfs:comment "Tools, software, methods, or techniques used at any stage in the production, analysis, or preservation of the interview data. This may include digital tools, statistical methods, qualitative analysis approaches, or any other relevant processes/methods applied to the interview material (both digital and non-digital). Include any custom developed tools or methods. Specify versions of software when relevant." ;
+    rdfs:label "Processing Tools" .
+
+
+#################################################################
+#    Data Properties - 4. Publication & Access
+#################################################################
+
+###  Rights
+oh:rights rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf dcterms:rights ;
+    rdfs:domain oh:PublicationAccessStage ;
+    rdfs:range xsd:anyURI ;
+    rdfs:comment "Could be restrictions requested by interviewee, other relevant third party (e.g. donor), project, or institution. Could include licensing rules or rules for how data can be extracted/manipulated. Where possible use standardised licensing schemes, such as Creative Commons." ;
+    rdfs:label "Rights" .
+
+###  Publisher
+oh:publisher rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf dcterms:contributor ;
+    rdfs:domain oh:PublicationAccessStage ;
+    rdfs:range xsd:string ;
+    rdfs:comment "An entity responsible for making the resource available. Examples of a Publisher include a person, an organization, or a service. The name of a Publisher should be used to indicate the entity." ;
+    rdfs:label "Publisher" .
+
+###  Related Resources
+oh:relatedResources rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf dcterms:relation ;
+    rdfs:domain oh:PublicationAccessStage ;
+    rdfs:range xsd:anyURI ;
+    rdfs:comment "Names and locations (incl. hyperlinks) of archival resources, published materials, or exhibitions. Could include items within or beyond the interview's repository. Could include material acquired during the interview. Use URI and possibly a short description." ;
+    rdfs:label "Related Resources" .
+
+###  Citation
+oh:citation rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf dcterms:bibliographicCitation ;
+    rdfs:domain oh:PublicationAccessStage ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Preferred citation of the Oral History interview." ;
+    rdfs:label "Citation" .
+
+
+###  Generated by MeDoraH Project (Version 3.0, 2026-03-08)

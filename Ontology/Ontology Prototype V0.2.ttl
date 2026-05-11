@@ -6,687 +6,611 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 
-# =============================================================================
-# Ontology Declaration
-# =============================================================================
+#################################################################
+# Ontology metadata
+#################################################################
 
-<http://example.org/medorah/> a owl:Ontology ;
-    rdfs:label "MeDoraH Ontology"@en ;
-    rdfs:comment """Ontology for modelling narratives of Digital Humanities from oral
-history interviews and related sources. Covers entities, events, artefacts,
-conceptual items, and the relations between them as recalled in sources."""@en ;
+medorah: a owl:Ontology ;
+    dcterms:title "MeDoraH Ontology Prototype v0.2"@en ;
+    dcterms:description "OWL/Turtle formalisation of the MeDoraH ontology prototype for modelling reference anchors and relation patterns in oral-history narratives about Digital Humanities."@en ;
+    dcterms:source "MeDoraH Ontology Prototype v0.2.md"@en ;
+    dcterms:created "2026-05-07"^^xsd:date ;
     owl:versionInfo "0.2" ;
-    dcterms:creator "MeDoraH Project" .
+    rdfs:comment "This ontology represents the entity-centric Fabula / Reference layer: what interviewees talk about, rather than narrative/discourse structure, stance, or epistemic modality. Claims, provenance, confidence, and evidence spans should be modelled in a Claim layer, RDF-star annotations, reified statement nodes, or a complementary SHACL/PROV-O model."@en .
 
-# =============================================================================
-# 1. CLASS HIERARCHY
-# =============================================================================
-
-# -----------------------------------------------------------------------------
-# 1.1 Core Superclass
-# -----------------------------------------------------------------------------
+#################################################################
+# Classes
+#################################################################
 
 medorah:Entity a owl:Class ;
     rdfs:label "Entity"@en ;
-    rdfs:comment """A thing that can be referred to in the narratives modelled in
-MeDoraH, including persons, organisations, groups, events, artefacts, concepts,
-places, times, and analytic properties."""@en .
-
-# -----------------------------------------------------------------------------
-# 1.2 Actor Module
-# -----------------------------------------------------------------------------
+    rdfs:comment "A thing that can be referred to in the narratives modelled in MeDoraH, including persons, organisations, groups, events, artefacts, concepts, places, times, and analytic properties."@en .
 
 medorah:Actor a owl:Class ;
-    rdfs:subClassOf medorah:Entity ;
     rdfs:label "Actor"@en ;
-    rdfs:comment """An entity capable of intentional action or participation in
-events, as recalled in oral history and related sources."""@en .
+    rdfs:comment "An entity capable of intentional action or participation in events, as recalled in oral history and related sources."@en ;
+    rdfs:subClassOf medorah:Entity .
 
 medorah:Person a owl:Class ;
-    rdfs:subClassOf medorah:Actor ;
     rdfs:label "Person"@en ;
-    rdfs:comment """An individual human being who appears as an agent, narrator,
-or subject in the sources."""@en .
+    rdfs:comment "An individual human being who appears as an agent, narrator, or subject in the sources."@en ;
+    rdfs:subClassOf medorah:Actor .
 
 medorah:Organisation a owl:Class ;
-    rdfs:subClassOf medorah:Actor ;
     rdfs:label "Organisation"@en ;
-    rdfs:comment """A formally recognised institution or organisational entity
-involved in DH-relevant activity."""@en .
+    rdfs:comment "A formally recognised institution or organisational entity involved in DH-relevant activity, such as a university, department, centre, archive, company, or similar organisation."@en ;
+    rdfs:subClassOf medorah:Actor .
 
 medorah:Group a owl:Class ;
-    rdfs:subClassOf medorah:Actor ;
     rdfs:label "Group"@en ;
-    rdfs:comment """A loosely defined group, committee, informal network, or
-community that may not be fully institutionalised but is described as acting
-collectively."""@en .
-
-# -----------------------------------------------------------------------------
-# 1.3 Event Module
-# -----------------------------------------------------------------------------
+    rdfs:comment "A loosely defined group, committee, informal network, or community that may not be fully institutionalised but is described as acting collectively."@en ;
+    rdfs:subClassOf medorah:Actor .
 
 medorah:Event a owl:Class ;
-    rdfs:subClassOf medorah:Entity ;
     rdfs:label "Event"@en ;
-    rdfs:comment """A temporal occurrence or happening in which actors can
-participate, and which can be located in time and space."""@en .
+    rdfs:comment "A temporal occurrence or happening in which actors can participate, and which can be located in time and space."@en ;
+    rdfs:subClassOf medorah:Entity .
 
 medorah:Project a owl:Class ;
-    rdfs:subClassOf medorah:Event ;
     rdfs:label "Project"@en ;
-    rdfs:comment """A planned, structured activity (often funded) with defined
-goals and outputs."""@en .
+    rdfs:comment "A planned, structured activity, often funded, with defined goals and outputs such as corpora, tools, publications, or infrastructure."@en ;
+    rdfs:subClassOf medorah:Event .
 
 medorah:CourseAndProgramme a owl:Class ;
-    rdfs:subClassOf medorah:Event ;
     rdfs:label "Course and Programme"@en ;
-    rdfs:comment """A formal course, training programme, or educational curriculum
-relevant to DH."""@en .
+    rdfs:comment "A formal course, training programme, or educational curriculum relevant to Digital Humanities."@en ;
+    rdfs:subClassOf medorah:Event .
 
 medorah:Conference a owl:Class ;
-    rdfs:subClassOf medorah:Event ;
     rdfs:label "Conference"@en ;
-    rdfs:comment """A scholarly meeting or event where research is presented and
-community relations are formed."""@en .
+    rdfs:comment "A scholarly meeting or event where research is presented and community relations are formed."@en ;
+    rdfs:subClassOf medorah:Event .
 
 medorah:EventSeries a owl:Class ;
-    rdfs:subClassOf medorah:Event ;
     rdfs:label "Event Series"@en ;
-    rdfs:comment """A recurring, named series of events (conference series, lecture
-series, seminar series)."""@en .
+    rdfs:comment "A recurring, named series of events, such as a conference series, lecture series, or seminar series."@en ;
+    rdfs:subClassOf medorah:Event .
 
 medorah:Activity a owl:Class ;
-    rdfs:subClassOf medorah:Event ;
     rdfs:label "Activity"@en ;
-    rdfs:comment """A bounded event characterised by actors performing actions,
-typically shorter and more localised than a project."""@en .
-
-# -----------------------------------------------------------------------------
-# 1.4 Artefact Module
-# -----------------------------------------------------------------------------
+    rdfs:comment "A bounded event characterised by actors performing actions, typically shorter and more localised than a project."@en ;
+    rdfs:subClassOf medorah:Event .
 
 medorah:Artefact a owl:Class ;
-    rdfs:subClassOf medorah:Entity ;
     rdfs:label "Artefact"@en ;
-    rdfs:comment """Anything that can be created, used, or depended on in DH
-practice, including technologies and works/resources."""@en .
-
-# -- Technology --
+    rdfs:comment "Anything that can be created, used, or depended on in Digital Humanities practice, including technologies and informational works or resources."@en ;
+    rdfs:subClassOf medorah:Entity .
 
 medorah:Technology a owl:Class ;
-    rdfs:subClassOf medorah:Artefact ;
     rdfs:label "Technology"@en ;
-    rdfs:comment """A technical artefact used to enable or perform DH practice,
-including software, hardware, standards, and infrastructure."""@en .
+    rdfs:comment "A technical artefact used to enable or perform Digital Humanities practice, including software, hardware, standards, and infrastructure."@en ;
+    rdfs:subClassOf medorah:Artefact .
 
 medorah:Software a owl:Class ;
-    rdfs:subClassOf medorah:Technology ;
     rdfs:label "Software"@en ;
-    rdfs:comment "Executable programs, scripts, platforms."@en .
+    rdfs:comment "Executable programs, scripts, platforms, or digital tools."@en ;
+    rdfs:subClassOf medorah:Technology .
 
 medorah:Hardware a owl:Class ;
-    rdfs:subClassOf medorah:Technology ;
     rdfs:label "Hardware"@en ;
-    rdfs:comment "Physical computing equipment."@en .
+    rdfs:comment "Physical computing equipment, such as servers, scanners, storage devices, or other machines."@en ;
+    rdfs:subClassOf medorah:Technology .
 
 medorah:Standard a owl:Class ;
-    rdfs:subClassOf medorah:Technology ;
     rdfs:label "Standard"@en ;
-    rdfs:comment "Formal standards and specifications."@en .
+    rdfs:comment "A formal technical standard, specification, or guideline treated as a technical artefact."@en ;
+    rdfs:subClassOf medorah:Technology .
 
 medorah:Infrastructure a owl:Class ;
-    rdfs:subClassOf medorah:Technology ;
     rdfs:label "Infrastructure"@en ;
-    rdfs:comment "Socio-technical infrastructure (repository platforms, compute infrastructure)."@en .
-
-# -- Work --
+    rdfs:comment "Socio-technical infrastructure supporting Digital Humanities practice, such as repositories, platforms, or compute services."@en ;
+    rdfs:subClassOf medorah:Technology .
 
 medorah:Work a owl:Class ;
-    rdfs:subClassOf medorah:Artefact ;
     rdfs:label "Work"@en ;
-    rdfs:comment """An informational resource or output that can be authored,
-published, curated, used, cited, or integrated."""@en .
+    rdfs:comment "An informational resource or output that can be authored, published, curated, used, cited, or integrated."@en ;
+    rdfs:subClassOf medorah:Artefact .
 
 medorah:InformationResource a owl:Class ;
-    rdfs:subClassOf medorah:Work ;
     rdfs:label "Information Resource"@en ;
-    rdfs:comment "Generic information resource (documentation, reports)."@en .
+    rdfs:comment "A generic information resource, such as documentation, reports, or reference material."@en ;
+    rdfs:subClassOf medorah:Work .
 
 medorah:Publication a owl:Class ;
-    rdfs:subClassOf medorah:Work ;
     rdfs:label "Publication"@en ;
-    rdfs:comment "Formally disseminated scholarly or professional work."@en .
+    rdfs:comment "A formally disseminated scholarly, professional, or public work, such as an article, book, report, or similar output."@en ;
+    rdfs:subClassOf medorah:Work .
 
 medorah:Corpus a owl:Class ;
-    rdfs:subClassOf medorah:Work ;
     rdfs:label "Corpus"@en ;
-    rdfs:comment "A curated collection of texts or records."@en .
+    rdfs:comment "A curated collection of texts, records, interviews, messages, or other materials treated as a research resource."@en ;
+    rdfs:subClassOf medorah:Work .
 
 medorah:Database a owl:Class ;
-    rdfs:subClassOf medorah:Work ;
     rdfs:label "Database"@en ;
-    rdfs:comment "A structured data store or curated database."@en .
+    rdfs:comment "A structured data store or curated database."@en ;
+    rdfs:subClassOf medorah:Work .
 
 medorah:Dataset a owl:Class ;
-    rdfs:subClassOf medorah:Work ;
     rdfs:label "Dataset"@en ;
-    rdfs:comment "A structured data package."@en .
+    rdfs:comment "A structured data package or collection of data prepared for analysis, publication, or reuse."@en ;
+    rdfs:subClassOf medorah:Work .
 
 medorah:Website a owl:Class ;
-    rdfs:subClassOf medorah:Work ;
     rdfs:label "Website"@en ;
-    rdfs:comment "A web-based resource or presence."@en .
-
-# -----------------------------------------------------------------------------
-# 1.5 Conceptual Item Module
-# -----------------------------------------------------------------------------
+    rdfs:comment "A web-based resource, project presence, or publication venue."@en ;
+    rdfs:subClassOf medorah:Work .
 
 medorah:ConceptualItem a owl:Class ;
-    rdfs:subClassOf medorah:Entity ;
     rdfs:label "Conceptual Item"@en ;
-    rdfs:comment """An immaterial construct used to organise, interpret, or
-generate knowledge, such as theories, methods, and disciplines."""@en .
-
-# -- Conceptual Framework --
+    rdfs:comment "An immaterial construct used to organise, interpret, or generate knowledge, such as a theory, method, definition, discipline, field, or research area."@en ;
+    rdfs:subClassOf medorah:Entity .
 
 medorah:ConceptualFramework a owl:Class ;
-    rdfs:subClassOf medorah:ConceptualItem ;
     rdfs:label "Conceptual Framework"@en ;
-    rdfs:comment """A conceptual apparatus (theory, paradigm, school of thought,
-definition) used to interpret or frame knowledge and practice."""@en .
+    rdfs:comment "A conceptual apparatus, theory, paradigm, school of thought, or definition used to interpret or frame knowledge and practice."@en ;
+    rdfs:subClassOf medorah:ConceptualItem .
 
 medorah:Theory a owl:Class ;
-    rdfs:subClassOf medorah:ConceptualFramework ;
-    rdfs:label "Theory"@en .
+    rdfs:label "Theory"@en ;
+    rdfs:comment "A theory used to explain, interpret, or organise knowledge."@en ;
+    rdfs:subClassOf medorah:ConceptualFramework .
 
 medorah:Paradigm a owl:Class ;
-    rdfs:subClassOf medorah:ConceptualFramework ;
-    rdfs:label "Paradigm"@en .
+    rdfs:label "Paradigm"@en ;
+    rdfs:comment "A paradigm or overarching intellectual model that structures inquiry or practice."@en ;
+    rdfs:subClassOf medorah:ConceptualFramework .
 
 medorah:SchoolOfThought a owl:Class ;
-    rdfs:subClassOf medorah:ConceptualFramework ;
-    rdfs:label "School of Thought"@en .
+    rdfs:label "School of Thought"@en ;
+    rdfs:comment "A recognised intellectual school, tradition, or approach."@en ;
+    rdfs:subClassOf medorah:ConceptualFramework .
 
 medorah:Definition a owl:Class ;
-    rdfs:subClassOf medorah:ConceptualFramework ;
     rdfs:label "Definition"@en ;
-    rdfs:comment """A conceptual object that can be coined or stabilised by actors
-(e.g. defining 'Digital Humanities' or a technical term)."""@en .
-
-# -- Methodology --
+    rdfs:comment "A conceptual object that defines, coins, or stabilises the meaning of a term or concept."@en ;
+    rdfs:subClassOf medorah:ConceptualFramework .
 
 medorah:Methodology a owl:Class ;
-    rdfs:subClassOf medorah:ConceptualItem ;
     rdfs:label "Methodology"@en ;
-    rdfs:comment "A structured approach to knowledge-making."@en .
+    rdfs:comment "A structured approach to knowledge-making."@en ;
+    rdfs:subClassOf medorah:ConceptualItem .
 
 medorah:Method a owl:Class ;
-    rdfs:subClassOf medorah:Methodology ;
     rdfs:label "Method"@en ;
-    rdfs:comment "A method, procedure, or named approach."@en .
+    rdfs:comment "A method, procedure, or named approach for research or practice."@en ;
+    rdfs:subClassOf medorah:Methodology .
 
 medorah:Practice a owl:Class ;
-    rdfs:subClassOf medorah:Methodology ;
     rdfs:label "Practice"@en ;
-    rdfs:comment "A practice that may be more situated or institutional."@en .
+    rdfs:comment "A situated or institutionalised practice used in knowledge-making."@en ;
+    rdfs:subClassOf medorah:Methodology .
 
 medorah:Technique a owl:Class ;
-    rdfs:subClassOf medorah:Methodology ;
     rdfs:label "Technique"@en ;
-    rdfs:comment "A specific technique, often more operational."@en .
-
-# -- Discipline --
+    rdfs:comment "A specific operational technique or procedure."@en ;
+    rdfs:subClassOf medorah:Methodology .
 
 medorah:Discipline a owl:Class ;
-    rdfs:subClassOf medorah:ConceptualItem ;
     rdfs:label "Discipline"@en ;
-    rdfs:comment "A disciplinary area or field of knowledge."@en .
+    rdfs:comment "A disciplinary area or field of knowledge."@en ;
+    rdfs:subClassOf medorah:ConceptualItem .
 
 medorah:AcademicDiscipline a owl:Class ;
-    rdfs:subClassOf medorah:Discipline ;
     rdfs:label "Academic Discipline"@en ;
-    rdfs:comment "A more institutionalised discipline."@en .
+    rdfs:comment "A more institutionalised discipline, often reflected in departments, curricula, professional societies, or recognised scholarly formations."@en ;
+    rdfs:subClassOf medorah:Discipline .
 
 medorah:FieldOfStudy a owl:Class ;
-    rdfs:subClassOf medorah:Discipline ;
     rdfs:label "Field of Study"@en ;
-    rdfs:comment "Often used for educational contexts."@en .
+    rdfs:comment "A field of study, often used in educational or programme contexts."@en ;
+    rdfs:subClassOf medorah:Discipline .
 
 medorah:ResearchArea a owl:Class ;
-    rdfs:subClassOf medorah:Discipline ;
     rdfs:label "Research Area"@en ;
-    rdfs:comment "Often used for research contexts, potentially emerging."@en .
-
-# -----------------------------------------------------------------------------
-# 1.6 Spatial and Temporal Module
-# -----------------------------------------------------------------------------
+    rdfs:comment "A research area, including emerging or interdisciplinary areas."@en ;
+    rdfs:subClassOf medorah:Discipline .
 
 medorah:SpatialEntity a owl:Class ;
-    rdfs:subClassOf medorah:Entity ;
     rdfs:label "Spatial Entity"@en ;
-    rdfs:comment """A geographic or spatial location relevant to the narratives,
-including cities, regions, countries, or other places."""@en .
+    rdfs:comment "A geographic or spatial location relevant to the narratives, including cities, regions, countries, or other places."@en ;
+    rdfs:subClassOf medorah:Entity .
 
 medorah:TemporalEntity a owl:Class ;
-    rdfs:subClassOf medorah:Entity ;
     rdfs:label "Temporal Entity"@en ;
-    rdfs:comment """A temporal expression or interval associated with events or
-other entities (year, decade, period, date range)."""@en .
-
-# -----------------------------------------------------------------------------
-# 1.7 Property Module
-# -----------------------------------------------------------------------------
+    rdfs:comment "A temporal expression or interval associated with events or other entities, such as a year, decade, period, or date range."@en ;
+    rdfs:subClassOf medorah:Entity .
 
 medorah:Property a owl:Class ;
-    rdfs:subClassOf medorah:Entity ;
     rdfs:label "Property"@en ;
-    rdfs:comment """An analytic classification or credential used to classify
-actors."""@en .
+    rdfs:comment "An analytic classification or credential used to classify actors, such as a role, position, or qualification."@en ;
+    rdfs:subClassOf medorah:Entity .
 
 medorah:RoleOrPosition a owl:Class ;
-    rdfs:subClassOf medorah:Property ;
     rdfs:label "Role or Position"@en ;
-    rdfs:comment "Social/professional roles and institutional positions."@en .
+    rdfs:comment "A property describing social, professional, or institutional roles and positions."@en ;
+    rdfs:subClassOf medorah:Property .
 
 medorah:Qualification a owl:Class ;
-    rdfs:subClassOf medorah:Property ;
     rdfs:label "Qualification"@en ;
-    rdfs:comment "Degrees, certifications, or other qualifications."@en .
+    rdfs:comment "A property describing degrees, certifications, or other qualifications."@en ;
+    rdfs:subClassOf medorah:Property .
 
 
-# =============================================================================
-# 2. OBJECT PROPERTIES
-# =============================================================================
+#################################################################
+# Object properties
+#################################################################
 
-# -----------------------------------------------------------------------------
-# 2.1 Actor → Actor: hasSocioInstitutionalRelationWith
-# -----------------------------------------------------------------------------
 
 medorah:hasSocioInstitutionalRelationWith a owl:ObjectProperty ;
     rdfs:label "has socio-institutional relation with"@en ;
+    rdfs:comment "A general socio-institutional relationship between two actors, to be specialised by sub-properties such as employment, study, collaboration, provision, representation, and institutional affiliation."@en ;
     rdfs:domain medorah:Actor ;
-    rdfs:range medorah:Actor ;
-    rdfs:comment """A general socio-institutional relationship between two actors,
-specialised by sub-properties."""@en .
+    rdfs:range medorah:Actor .
 
 medorah:hasEmploymentAt a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:hasSocioInstitutionalRelationWith ;
     rdfs:label "has employment at"@en ;
+    rdfs:comment "Person employed by an organisation."@en ;
+    rdfs:subPropertyOf medorah:hasSocioInstitutionalRelationWith ;
     rdfs:domain medorah:Person ;
     rdfs:range medorah:Organisation .
 
 medorah:studiedAt a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:hasSocioInstitutionalRelationWith ;
     rdfs:label "studied at"@en ;
+    rdfs:comment "Person formally studied at an organisation."@en ;
+    rdfs:subPropertyOf medorah:hasSocioInstitutionalRelationWith ;
     rdfs:domain medorah:Person ;
     rdfs:range medorah:Organisation .
 
 medorah:founded a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:hasSocioInstitutionalRelationWith ;
     rdfs:label "founded"@en ;
+    rdfs:comment "Person founded or established an organisation."@en ;
+    rdfs:subPropertyOf medorah:hasSocioInstitutionalRelationWith ;
     rdfs:domain medorah:Person ;
     rdfs:range medorah:Organisation .
 
-medorah:collaboratedWith a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:hasSocioInstitutionalRelationWith ;
+medorah:collaboratedWith a owl:ObjectProperty, owl:SymmetricProperty ;
     rdfs:label "collaborated with"@en ;
+    rdfs:comment "Persons collaborated or worked together."@en ;
+    rdfs:subPropertyOf medorah:hasSocioInstitutionalRelationWith ;
     rdfs:domain medorah:Person ;
-    rdfs:range medorah:Person ;
-    a owl:SymmetricProperty .
+    rdfs:range medorah:Person .
 
 medorah:mentorsOrSupervises a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:hasSocioInstitutionalRelationWith ;
     rdfs:label "mentors or supervises"@en ;
+    rdfs:comment "Person mentors or supervises another person."@en ;
+    rdfs:subPropertyOf medorah:hasSocioInstitutionalRelationWith ;
     rdfs:domain medorah:Person ;
     rdfs:range medorah:Person .
 
 medorah:providesResource a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:hasSocioInstitutionalRelationWith ;
     rdfs:label "provides resource"@en ;
+    rdfs:comment "Actor provides resources, services, or support to another actor."@en ;
+    rdfs:subPropertyOf medorah:hasSocioInstitutionalRelationWith ;
     rdfs:domain medorah:Actor ;
     rdfs:range medorah:Actor .
 
 medorah:influences a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:hasSocioInstitutionalRelationWith ;
     rdfs:label "influences"@en ;
+    rdfs:comment "Person influences another person."@en ;
+    rdfs:subPropertyOf medorah:hasSocioInstitutionalRelationWith ;
     rdfs:domain medorah:Person ;
     rdfs:range medorah:Person .
 
 medorah:hasEducationIn a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:hasSocioInstitutionalRelationWith ;
     rdfs:label "has education in"@en ;
+    rdfs:comment "Person has an education or training context at an organisation; broader than formal study where required by the data."@en ;
+    rdfs:subPropertyOf medorah:hasSocioInstitutionalRelationWith ;
     rdfs:domain medorah:Person ;
     rdfs:range medorah:Organisation .
 
 medorah:chairOf a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:hasSocioInstitutionalRelationWith ;
     rdfs:label "chair of"@en ;
+    rdfs:comment "Person chairs an organisation, committee, centre, or similar organisational entity."@en ;
+    rdfs:subPropertyOf medorah:hasSocioInstitutionalRelationWith ;
     rdfs:domain medorah:Person ;
     rdfs:range medorah:Organisation .
 
 medorah:represents a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:hasSocioInstitutionalRelationWith ;
     rdfs:label "represents"@en ;
+    rdfs:comment "Person represents an organisation."@en ;
+    rdfs:subPropertyOf medorah:hasSocioInstitutionalRelationWith ;
     rdfs:domain medorah:Person ;
     rdfs:range medorah:Organisation .
 
 medorah:affiliatedWith a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:hasSocioInstitutionalRelationWith ;
     rdfs:label "affiliated with"@en ;
+    rdfs:comment "Person is affiliated with an organisation."@en ;
+    rdfs:subPropertyOf medorah:hasSocioInstitutionalRelationWith ;
     rdfs:domain medorah:Person ;
     rdfs:range medorah:Organisation .
 
-medorah:mergedWith a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:hasSocioInstitutionalRelationWith ;
+medorah:mergedWith a owl:ObjectProperty, owl:SymmetricProperty ;
     rdfs:label "merged with"@en ;
+    rdfs:comment "Organisation merged with another organisation."@en ;
+    rdfs:subPropertyOf medorah:hasSocioInstitutionalRelationWith ;
     rdfs:domain medorah:Organisation ;
-    rdfs:range medorah:Organisation ;
-    a owl:SymmetricProperty .
-
-# -----------------------------------------------------------------------------
-# 2.2 Actor → Artefact: createsItem
-# -----------------------------------------------------------------------------
+    rdfs:range medorah:Organisation .
 
 medorah:createsItem a owl:ObjectProperty ;
     rdfs:label "creates item"@en ;
+    rdfs:comment "Actor is responsible for creating or bringing into existence an artefact, technology, or work."@en ;
     rdfs:domain medorah:Actor ;
     rdfs:range medorah:Artefact ;
-    owl:inverseOf medorah:createdBy ;
-    rdfs:comment """The actor is responsible for creating or bringing into existence
-an artefact."""@en .
+    owl:inverseOf medorah:createdBy .
 
 medorah:createdBy a owl:ObjectProperty ;
     rdfs:label "created by"@en ;
+    rdfs:comment "Artefact was created or brought into existence by an actor."@en ;
     rdfs:domain medorah:Artefact ;
     rdfs:range medorah:Actor ;
     owl:inverseOf medorah:createsItem .
 
 medorah:authorsWork a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:createsItem ;
     rdfs:label "authors work"@en ;
+    rdfs:comment "Actor authors a work."@en ;
+    rdfs:subPropertyOf medorah:createsItem ;
     rdfs:domain medorah:Actor ;
     rdfs:range medorah:Work .
 
 medorah:publishesWork a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:createsItem ;
     rdfs:label "publishes work"@en ;
+    rdfs:comment "Actor publishes a work."@en ;
+    rdfs:subPropertyOf medorah:createsItem ;
     rdfs:domain medorah:Actor ;
     rdfs:range medorah:Work .
 
 medorah:createsArtefact a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:createsItem ;
     rdfs:label "creates artefact"@en ;
+    rdfs:comment "Actor creates an artefact."@en ;
+    rdfs:subPropertyOf medorah:createsItem ;
     rdfs:domain medorah:Actor ;
     rdfs:range medorah:Artefact .
 
 medorah:developsTech a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:createsItem ;
     rdfs:label "develops technology"@en ;
+    rdfs:comment "Actor develops a technology."@en ;
+    rdfs:subPropertyOf medorah:createsItem ;
     rdfs:domain medorah:Actor ;
     rdfs:range medorah:Technology .
-
-# -----------------------------------------------------------------------------
-# 2.3 Actor|Project → Artefact: uses
-# NOTE: Domain set to medorah:Entity to avoid RDFS intersection semantics.
-#       Intended domain is Actor or Project. Constrain via SHACL in practice.
-# -----------------------------------------------------------------------------
 
 medorah:uses a owl:ObjectProperty ;
     rdfs:label "uses"@en ;
-    rdfs:domain medorah:Entity ;
+    rdfs:comment "Actor or project uses or employs an artefact in practice."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( medorah:Actor medorah:Project ) ] ;
     rdfs:range medorah:Artefact ;
-    owl:inverseOf medorah:usedBy ;
-    rdfs:comment """The actor (or project) uses or employs an artefact in practice.
-Domain intentionally broad (Entity); constrain to Actor|Project via SHACL."""@en .
+    owl:inverseOf medorah:usedBy .
 
 medorah:usedBy a owl:ObjectProperty ;
     rdfs:label "used by"@en ;
+    rdfs:comment "Artefact is used by an actor or project."@en ;
     rdfs:domain medorah:Artefact ;
-    rdfs:range medorah:Entity ;
+    rdfs:range [ a owl:Class ; owl:unionOf ( medorah:Actor medorah:Project ) ] ;
     owl:inverseOf medorah:uses .
 
 medorah:usesTechnology a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:uses ;
     rdfs:label "uses technology"@en ;
+    rdfs:comment "Actor or project uses a technology."@en ;
+    rdfs:subPropertyOf medorah:uses ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( medorah:Actor medorah:Project ) ] ;
     rdfs:range medorah:Technology .
 
 medorah:usesCorpusOrResource a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:uses ;
     rdfs:label "uses corpus or resource"@en ;
+    rdfs:comment "Person uses a corpus, resource, or work."@en ;
+    rdfs:subPropertyOf medorah:uses ;
     rdfs:domain medorah:Person ;
     rdfs:range medorah:Work .
 
-# -----------------------------------------------------------------------------
-# 2.4 Actor → ConceptualItem: engagesWithConcept
-# -----------------------------------------------------------------------------
-
 medorah:engagesWithConcept a owl:ObjectProperty ;
     rdfs:label "engages with concept"@en ;
+    rdfs:comment "Actor engages with conceptual items, disciplines, methods, frameworks, or definitions through working, studying, supporting, developing, or defining."@en ;
     rdfs:domain medorah:Actor ;
-    rdfs:range medorah:ConceptualItem ;
-    rdfs:comment """Actor engages with conceptual items (disciplines, methods,
-frameworks) through working, studying, supporting, developing, or defining."""@en .
+    rdfs:range medorah:ConceptualItem .
 
 medorah:workInField a owl:ObjectProperty ;
+    rdfs:label "works in field"@en ;
+    rdfs:comment "Actor worked in, taught in, supported, or otherwise participated in a discipline or field."@en ;
     rdfs:subPropertyOf medorah:engagesWithConcept ;
-    rdfs:label "work in field"@en ;
     rdfs:domain medorah:Actor ;
     rdfs:range medorah:Discipline .
 
 medorah:studiesField a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:engagesWithConcept ;
     rdfs:label "studies field"@en ;
+    rdfs:comment "Actor studied in a discipline or field."@en ;
+    rdfs:subPropertyOf medorah:engagesWithConcept ;
     rdfs:domain medorah:Actor ;
     rdfs:range medorah:Discipline .
 
 medorah:coinsOrDefinesTerm a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:engagesWithConcept ;
     rdfs:label "coins or defines term"@en ;
+    rdfs:comment "Person coins or defines a term or definition."@en ;
+    rdfs:subPropertyOf medorah:engagesWithConcept ;
     rdfs:domain medorah:Person ;
     rdfs:range medorah:Definition .
 
-# -----------------------------------------------------------------------------
-# 2.5 Actor → Event: engagesIn
-# -----------------------------------------------------------------------------
-
 medorah:engagesIn a owl:ObjectProperty ;
     rdfs:label "engages in"@en ;
+    rdfs:comment "Actor is involved in an event through participation, organisation, presentation, or funding."@en ;
     rdfs:domain medorah:Actor ;
     rdfs:range medorah:Event ;
-    owl:inverseOf medorah:isEngagedInBy ;
-    rdfs:comment "Actor is involved in an event."@en .
+    owl:inverseOf medorah:isEngagedInBy .
 
 medorah:isEngagedInBy a owl:ObjectProperty ;
     rdfs:label "is engaged in by"@en ;
+    rdfs:comment "Event has an actor involved in it through participation, organisation, presentation, or funding."@en ;
     rdfs:domain medorah:Event ;
     rdfs:range medorah:Actor ;
     owl:inverseOf medorah:engagesIn .
 
 medorah:participatesIn a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:engagesIn ;
     rdfs:label "participates in"@en ;
+    rdfs:comment "Actor attends, participates in, or receives training through an event."@en ;
+    rdfs:subPropertyOf medorah:engagesIn ;
     rdfs:domain medorah:Actor ;
     rdfs:range medorah:Event .
 
 medorah:organises a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:engagesIn ;
     rdfs:label "organises"@en ;
+    rdfs:comment "Actor organises or provides an event."@en ;
+    rdfs:subPropertyOf medorah:engagesIn ;
     rdfs:domain medorah:Actor ;
     rdfs:range medorah:Event .
 
 medorah:presentedAt a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:engagesIn ;
     rdfs:label "presented at"@en ;
+    rdfs:comment "Actor presents a talk, work, or contribution at an event."@en ;
+    rdfs:subPropertyOf medorah:engagesIn ;
     rdfs:domain medorah:Actor ;
     rdfs:range medorah:Event .
 
 medorah:funds a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:engagesIn ;
     rdfs:label "funds"@en ;
+    rdfs:comment "Actor funds an event."@en ;
+    rdfs:subPropertyOf medorah:engagesIn ;
     rdfs:domain medorah:Actor ;
     rdfs:range medorah:Event .
 
-# -----------------------------------------------------------------------------
-# 2.6 Actor → Property: hasProperty
-# -----------------------------------------------------------------------------
-
 medorah:hasProperty a owl:ObjectProperty ;
     rdfs:label "has property"@en ;
+    rdfs:comment "Associates an actor with analytic properties such as roles, positions, and qualifications."@en ;
     rdfs:domain medorah:Actor ;
     rdfs:range medorah:Property ;
-    owl:inverseOf medorah:isPropertyOf ;
-    rdfs:comment """Associates an actor with analytic properties such as
-roles/positions and qualifications."""@en .
+    owl:inverseOf medorah:isPropertyOf .
 
 medorah:isPropertyOf a owl:ObjectProperty ;
     rdfs:label "is property of"@en ;
+    rdfs:comment "Analytic property is associated with an actor."@en ;
     rdfs:domain medorah:Property ;
     rdfs:range medorah:Actor ;
     owl:inverseOf medorah:hasProperty .
 
 medorah:hasRoleOrPosition a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:hasProperty ;
     rdfs:label "has role or position"@en ;
+    rdfs:comment "Actor holds a role or position."@en ;
+    rdfs:subPropertyOf medorah:hasProperty ;
     rdfs:domain medorah:Actor ;
     rdfs:range medorah:RoleOrPosition .
 
 medorah:hasQualification a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:hasProperty ;
     rdfs:label "has qualification"@en ;
+    rdfs:comment "Actor has a qualification, degree, certification, or comparable credential."@en ;
+    rdfs:subPropertyOf medorah:hasProperty ;
     rdfs:domain medorah:Actor ;
     rdfs:range medorah:Qualification .
 
-# -----------------------------------------------------------------------------
-# 2.7 Event → Spatial|Organisation: takesPlaceAt
-# NOTE: Range set to medorah:Entity to avoid RDFS intersection semantics.
-#       Intended range is SpatialEntity or Organisation. Constrain via SHACL.
-# -----------------------------------------------------------------------------
-
 medorah:takesPlaceAt a owl:ObjectProperty ;
     rdfs:label "takes place at"@en ;
+    rdfs:comment "Event takes place at a location, expressed either as a spatial entity or as an organisation-as-venue."@en ;
     rdfs:domain medorah:Event ;
-    rdfs:range medorah:Entity ;
-    rdfs:comment """Links an event to its location, expressed either as a place
-or as an organisation-as-venue. Range intentionally broad; constrain to
-SpatialEntity|Organisation via SHACL or OWL unionOf."""@en .
-
-# -----------------------------------------------------------------------------
-# 2.8 Event → Temporal: hasTimeExtent
-# -----------------------------------------------------------------------------
+    rdfs:range [ a owl:Class ; owl:unionOf ( medorah:SpatialEntity medorah:Organisation ) ] .
 
 medorah:hasTimeExtent a owl:ObjectProperty ;
     rdfs:label "has time extent"@en ;
+    rdfs:comment "Event is linked to the temporal expression, interval, date, or period during which it occurs."@en ;
     rdfs:domain medorah:Event ;
-    rdfs:range medorah:TemporalEntity ;
-    rdfs:comment """Links an event to the time interval/date/period during which
-it occurs."""@en .
-
-# -----------------------------------------------------------------------------
-# 2.9 Entity → Entity: dependency
-# -----------------------------------------------------------------------------
+    rdfs:range medorah:TemporalEntity .
 
 medorah:dependency a owl:ObjectProperty ;
     rdfs:label "dependency"@en ;
+    rdfs:comment "A generic dependency relationship between entities, including part-whole, conceptual influence, and software-hardware relations."@en ;
     rdfs:domain medorah:Entity ;
-    rdfs:range medorah:Entity ;
-    rdfs:comment """A generic dependency relationship between entities, including
-part-whole, conceptual influence, and software-hardware relations."""@en .
+    rdfs:range medorah:Entity .
 
-medorah:isPartOf a owl:ObjectProperty, owl:TransitiveProperty ;
-    rdfs:subPropertyOf medorah:dependency ;
+medorah:isPartOf a owl:ObjectProperty ;
     rdfs:label "is part of"@en ;
+    rdfs:comment "Entity is part of a larger entity."@en ;
+    rdfs:subPropertyOf medorah:dependency ;
     rdfs:domain medorah:Entity ;
     rdfs:range medorah:Entity .
 
 medorah:conceptuallyInfluences a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:dependency ;
     rdfs:label "conceptually influences"@en ;
+    rdfs:comment "One conceptual item influences another conceptual item."@en ;
+    rdfs:subPropertyOf medorah:dependency ;
     rdfs:domain medorah:ConceptualItem ;
     rdfs:range medorah:ConceptualItem .
 
 medorah:runsOn a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:dependency ;
     rdfs:label "runs on"@en ;
+    rdfs:comment "Software runs on hardware."@en ;
+    rdfs:subPropertyOf medorah:dependency ;
     rdfs:domain medorah:Software ;
     rdfs:range medorah:Hardware .
 
-# -----------------------------------------------------------------------------
-# 2.10 Artefact → ConceptualItem: about
-# -----------------------------------------------------------------------------
-
 medorah:about a owl:ObjectProperty ;
     rdfs:label "about"@en ;
+    rdfs:comment "Connects artefacts, works, or technologies to conceptual items they are about, implement, or operationalise."@en ;
     rdfs:domain medorah:Artefact ;
-    rdfs:range medorah:ConceptualItem ;
-    rdfs:comment """Connects artefacts (works/technologies) to conceptual items
-they are about, implement, or operationalise."""@en .
+    rdfs:range medorah:ConceptualItem .
 
 medorah:hasTopic a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:about ;
     rdfs:label "has topic"@en ;
+    rdfs:comment "Work is about a discipline, field, or topic."@en ;
+    rdfs:subPropertyOf medorah:about ;
     rdfs:domain medorah:Work ;
     rdfs:range medorah:Discipline .
 
 medorah:implementsConcept a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:about ;
     rdfs:label "implements concept"@en ;
+    rdfs:comment "Artefact implements, operationalises, or embodies a concept, method, or framework."@en ;
+    rdfs:subPropertyOf medorah:about ;
     rdfs:domain medorah:Artefact ;
     rdfs:range medorah:ConceptualItem .
 
-# -----------------------------------------------------------------------------
-# 2.11 Actor → SpatialEntity: hasResidence
-# -----------------------------------------------------------------------------
-
 medorah:hasResidence a owl:ObjectProperty ;
     rdfs:label "has residence"@en ;
+    rdfs:comment "Associates an actor with locations of residence, upbringing, work, or organisational location."@en ;
     rdfs:domain medorah:Actor ;
-    rdfs:range medorah:SpatialEntity ;
-    rdfs:comment """Associates an actor with locations of residence, upbringing,
-work, or organisational location."""@en .
+    rdfs:range medorah:SpatialEntity .
 
 medorah:residesIn a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:hasResidence ;
     rdfs:label "resides in"@en ;
+    rdfs:comment "Person resides in a place."@en ;
+    rdfs:subPropertyOf medorah:hasResidence ;
     rdfs:domain medorah:Person ;
     rdfs:range medorah:SpatialEntity .
 
 medorah:grewUpIn a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:hasResidence ;
     rdfs:label "grew up in"@en ;
+    rdfs:comment "Person grew up in a spatial entity, often an administrative area."@en ;
+    rdfs:subPropertyOf medorah:hasResidence ;
     rdfs:domain medorah:Person ;
     rdfs:range medorah:SpatialEntity .
 
 medorah:workedIn a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:hasResidence ;
     rdfs:label "worked in"@en ;
+    rdfs:comment "Person worked in a place."@en ;
+    rdfs:subPropertyOf medorah:hasResidence ;
     rdfs:domain medorah:Person ;
     rdfs:range medorah:SpatialEntity .
 
 medorah:locatedIn a owl:ObjectProperty ;
-    rdfs:subPropertyOf medorah:hasResidence ;
     rdfs:label "located in"@en ;
+    rdfs:comment "Organisation is located in a place."@en ;
+    rdfs:subPropertyOf medorah:hasResidence ;
     rdfs:domain medorah:Organisation ;
     rdfs:range medorah:SpatialEntity .
 
 
-# =============================================================================
-# 3. DATATYPE PROPERTIES
-# =============================================================================
+#################################################################
+# Datatype properties
+#################################################################
 
 medorah:hasAttribute a owl:DatatypeProperty ;
     rdfs:label "has attribute"@en ;
+    rdfs:comment "Captures literal attributes, notes, codes, or minimal descriptions that do not warrant separate entity modelling."@en ;
     rdfs:domain medorah:Entity ;
-    rdfs:range rdfs:Literal ;
-    rdfs:comment """Captures literal attributes (notes, codes, minimal descriptions)
-that do not warrant separate entities."""@en .
+    rdfs:range rdfs:Literal .
 
+#################################################################
+# Annotation notes for interoperability
+#################################################################
 
-# =============================================================================
-# 4. ALIGNMENT NOTES (informational, no formal axioms)
-# =============================================================================
-# Person      ↔ foaf:Person, schema:Person, cidoc:E21_Person
-# Organisation ↔ foaf:Organization, schema:Organization, cidoc:E74_Group
-# Event       ↔ cidoc:E5_Event
-# SpatialEntity ↔ cidoc:E53_Place
-# TemporalEntity ↔ cidoc:E52_Time-Span
-# Publication/Work ↔ schema:CreativeWork, dcterms:BibliographicResource
+medorah:Person skos:scopeNote "Plausibly alignable with foaf:Person, schema:Person, and CIDOC CRM E21 Person; no formal equivalence is asserted in this prototype."@en .
+medorah:Organisation skos:scopeNote "Plausibly alignable with foaf:Organization, schema:Organization, and CIDOC CRM E74 Group; no formal equivalence is asserted in this prototype."@en .
+medorah:Event skos:scopeNote "Plausibly alignable with CIDOC CRM E5 Event; no formal equivalence is asserted in this prototype."@en .
+medorah:SpatialEntity skos:scopeNote "Plausibly alignable with CIDOC CRM E53 Place; no formal equivalence is asserted in this prototype."@en .
+medorah:TemporalEntity skos:scopeNote "Plausibly alignable with CIDOC CRM E52 Time-Span; no formal equivalence is asserted in this prototype."@en .
+medorah:Publication skos:scopeNote "Plausibly alignable with schema:CreativeWork, dcterms:BibliographicResource, or IFLA-LRM/FRBRoo-inspired work models; no formal equivalence is asserted in this prototype."@en .
+medorah:Work skos:scopeNote "Plausibly alignable with schema:CreativeWork, dcterms:BibliographicResource, or IFLA-LRM/FRBRoo-inspired work models; no formal equivalence is asserted in this prototype."@en .
